@@ -1,0 +1,3277 @@
+<html>
+<body>
+  <h1>Undocumented CRM SDK Messages</h1>
+  
+<table style="font-size:12pt;word-break:break-all;">
+<thead>
+<tr style="font-size:10pt;">
+<th width="25%">Request name</th>
+<th width="75%">Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AddDynamicProperty</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RegardingObject: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>DynamicProperty: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Id: <em>System.Guid</em></li>
+<li>DynamicPropertyId: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>AddEditAppModule</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>AppModuleComponents: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+<li>AppModule: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+<li>IsNew: <em>System.Boolean</em></li>
+<li>RetainAppModuleComponents: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>AppModuleComponentIds: <em>System.Guid[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>AddMembersByFetchXmlList</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ListId: <em>System.Guid</em></li>
+<li>FetchXml: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>AddOrEditLocation</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>LocationName: <em>System.String</em></li>
+<li>AbsUrl: <em>System.String</em></li>
+<li>RegardingObjectId: <em>System.String</em></li>
+<li>RelativePath: <em>System.String</em></li>
+<li>RegardingObjType: <em>System.Int32</em></li>
+<li>ParentType: <em>System.Int32</em></li>
+<li>ParentId: <em>System.String</em></li>
+<li>IsAddOrEditMode: <em>System.Boolean</em></li>
+<li>IsCreateFolder: <em>System.Boolean</em></li>
+<li>DocumentId: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>LocationId: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ApplyProfileRule</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Target: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>AssignAllRecordsTeam</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>OldOwnerId: <em>System.Guid</em></li>
+<li>OldOwnerType: <em>System.Int32</em></li>
+<li>NewOwnerId: <em>System.Guid</em></li>
+<li>NewOwnerType: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>AssociateKnowledgeArticle</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RegardingObjectId: <em>System.Guid</em></li>
+<li>RegardingObjectTypeCode: <em>System.Int32</em></li>
+<li>AssociationRelationshipName: <em>System.String</em></li>
+<li>KnowledgeArticleId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>AuthenticateAndFetchACIData</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityName: <em>System.String</em></li>
+<li>EntityRecordId: <em>System.Guid</em></li>
+<li>ACIRequestURI: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ACIResponse: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>BestTimeToEmail</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityReferenceCollection: <em>Microsoft.Xrm.Sdk.EntityReferenceCollection</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>PreferredTime: <em>System.DateTime</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>BuildTopicModel</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>TopicModelId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>BulkDeleteImportedRecords</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>TargetEntityName: <em>System.String</em></li>
+<li>ImportSequenceNumber: <em>System.Int32</em></li>
+<li>ImportId: <em>System.Guid</em></li>
+<li>DeleteImportHistory: <em>System.Boolean</em></li>
+<li>JobName: <em>System.String</em></li>
+<li>SendEmailNotification: <em>System.Boolean</em></li>
+<li>ToRecipients: <em>System.String</em></li>
+<li>CCRecipients: <em>System.String</em></li>
+<li>RecurrencePattern: <em>System.String</em></li>
+<li>SourceImportId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>JobId: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>BulkOperationStatusClose</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>BulkOperationId: <em>System.Guid</em></li>
+<li>FailureCount: <em>System.Int32</em></li>
+<li>SuccessCount: <em>System.Int32</em></li>
+<li>StatusReason: <em>System.Int32</em></li>
+<li>ErrorCode: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>CalculateTriggerDateTime</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CalendarId: <em>System.Guid</em></li>
+<li>StartTime: <em>System.DateTime</em></li>
+<li>TriggerDuration: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>result: <em>System.DateTime</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CanCloseOpportunity</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>OpportunityId: <em>System.Guid</em></li>
+<li>QuoteId: <em>System.Guid</em></li>
+<li>NewStatus: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>CanClose: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CanUserSendEmail</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>HasPrivileges: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CheckClientCompatibility</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CrmClientVersion: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Result: <em>System.Int32</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CheckInDocument</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Entity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+<li>CheckInComments: <em>System.String</em></li>
+<li>RetainCheckout: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>CheckInSharePointDocument</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>DocumentId: <em>System.String</em></li>
+<li>CheckInComments: <em>System.String</em></li>
+<li>RetainCheckout: <em>System.Boolean</em></li>
+<li>SiteUrl: <em>System.String</em></li>
+<li>DocumentLocation: <em>System.String</em></li>
+<li>ReferencedEntity: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>CheckNotifications</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Events: <em>System.Int32[]</em></li>
+<li>LastChecked: <em>System.DateTime</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CheckoutDocument</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Entity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>CheckoutSharePointDocument</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>DocumentId: <em>System.String</em></li>
+<li>SiteUrl: <em>System.String</em></li>
+<li>DocumentLocation: <em>System.String</em></li>
+<li>ReferencedEntity: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>CheckRouterCompatibility</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CrmRouterVersion: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Result: <em>System.Int32</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CleanUpBulkOperation</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>BulkOperationId: <em>System.Guid</em></li>
+<li>BulkOperationSource: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>CloneProductAssociation</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Source: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>CloseOpportunity</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>OpportunityId: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>Status: <em>Microsoft.Xrm.Sdk.OptionSetValue</em></li>
+<li>ActualRevenue: <em>Microsoft.Xrm.Sdk.Money</em></li>
+<li>CompetitorId: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>CloseDate: <em>System.DateTime</em></li>
+<li>Description: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>ConfigureReportingDataConnector</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>DataProviderType: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>ConvertActivity</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ActivityId: <em>System.Guid</em></li>
+<li>ActivityEntityName: <em>System.String</em></li>
+<li>TargetEntity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+<li>TargetEntityName: <em>System.String</em></li>
+<li>CreateCampaignResponse: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>RecordId: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ConvertCampaignResponse</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CampaignResponse: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>EntityName: <em>System.String</em></li>
+<li>CreateOpportunityForExistingCustomer: <em>System.Boolean</em></li>
+<li>Customer: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>Currency: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>Owner: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityReference: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CopySharePointDocuments</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>DestinationLocation: <em>System.String</em></li>
+<li>AbsoluteUrls: <em>System.String[]</em></li>
+<li>RelativeUrls: <em>System.String[]</em></li>
+<li>Source: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Status: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CreateAndAssociate</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RegardingObjectId: <em>System.Guid</em></li>
+<li>RegardingObjectTypeCode: <em>System.Int32</em></li>
+<li>AssociationRelationshipName: <em>System.String</em></li>
+<li>Article: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>CreateDocumentLibraries</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>DocumentLibraryNames: <em>System.String</em></li>
+<li>Url: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>DocumentLibraryResult: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CreateEmailReplyDraft</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>MessageId: <em>System.String</em></li>
+<li>ReplyText: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>MailWebLink: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CreateFolderAndNewDocuments</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>FolderName: <em>System.String</em></li>
+<li>FileNameList: <em>System.String[]</em></li>
+<li>RegardingObjectType: <em>System.Int32</em></li>
+<li>RegardingObjectId: <em>System.String</em></li>
+<li>LocationType: <em>System.Int32</em></li>
+<li>ParentLocationId: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>LocationId: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CreateFolder</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>FolderName: <em>System.String</em></li>
+<li>RegardingObjectType: <em>System.Int32</em></li>
+<li>RegardingObjectId: <em>System.String</em></li>
+<li>DocumentType: <em>System.Int32</em></li>
+<li>ParentLocationId: <em>System.String</em></li>
+<li>SiteType: <em>System.Int32</em></li>
+<li>ValidateFolder: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>LocationId: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CreateFromTemplate</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>WizardXml: <em>System.String</em></li>
+<li>IsOrgReport: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>id: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CreateOrUpdateImportMapFromApp</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>MapXml: <em>System.String</em></li>
+<li>ColMappingIdsToDelete: <em>System.Guid[]</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ImportMapId: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CreateOutlookSubscriptionSubscriptionClients</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Target: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>id: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CreatePostRelationships</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityLogicalName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>CreateProducts</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Entities: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+<li>ParentEntity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CreateRecommendationModelVersion</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RecommendationModelId: <em>System.Guid</em></li>
+<li>Target: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>id: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CreateSchedule</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ReportId: <em>System.Guid</em></li>
+<li>ScheduleXml: <em>System.String</em></li>
+<li>ParameterXml: <em>System.String</em></li>
+<li>ScheduledReportName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>id: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CreateSharePointDocumentLibraries</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>DocumentLibraryNames: <em>System.String[]</em></li>
+<li>Url: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Status: <em>System.String[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CreateSharePointFolderAndUploadDocuments</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>FolderName: <em>System.String</em></li>
+<li>Path: <em>System.String</em></li>
+<li>DocumentLibrary: <em>System.String</em></li>
+<li>SiteUrl: <em>System.String</em></li>
+<li>IsNoteBookFolder: <em>System.Boolean</em></li>
+<li>FileName: <em>System.String[]</em></li>
+<li>DocumentContents: <em>System.String[]</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>FileEditUrls: <em>System.String[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>CreateSharePointFolder</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>FolderName: <em>System.String</em></li>
+<li>Path: <em>System.String</em></li>
+<li>DocumentLibrary: <em>System.String</em></li>
+<li>SiteUrl: <em>System.String</em></li>
+<li>IsNoteBookFolder: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>CreateSubscriptionSyncInfo</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Target: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>CreateWithMappingImportMap</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ImportMap: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+<li>ColumnMappings: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+<li>PickListMappings: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+<li>LookUpMappings: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+<li>OwnerMappings: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+<li>TransformationMappings: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+<li>TransformationParameterMappings: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Id: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>DebugCacheGetContents</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CacheName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>CacheItems: <em>Microsoft.Crm.Sdk.Messages.CacheItem[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>DebugCacheGetSize</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CacheName: <em>System.String</em></li>
+<li>OutputFormat: <em>System.String</em></li>
+<li>IncludeLogs: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>CacheSizeDetails: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>DebugFlushCache</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CacheName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>DebugGenerateFault</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>FaultType: <em>Microsoft.Crm.Sdk.Messages.FaultType</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>DebugRetrievePipelinePerformanceResult</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>WebRequestId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>PerformanceResult: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>DebugTraceBufferGetContents</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>TraceBuffer: <em>System.String[]</em></li>
+<li>TraceBufferSizeSetting: <em>System.Int32</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>DeleteDocument</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Entities: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>DeleteRecommendationModel</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Target: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>IsModelDeletedInAzure: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>DeleteRecommendationModelVersion</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Target: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>IsBuildIdDeletedInAzure: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>DeleteSharePointDocument</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>DocumentIds: <em>System.String[]</em></li>
+<li>SiteUrl: <em>System.String</em></li>
+<li>DocumentLocation: <em>System.String</em></li>
+<li>ReferencedEntity: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>DisassociateKnowledgeArticle</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RegardingObjectId: <em>System.Guid</em></li>
+<li>RegardingObjectTypeCode: <em>System.Int32</em></li>
+<li>AssociationRelationshipName: <em>System.String</em></li>
+<li>KnowledgeArticleId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>DiscardDocumentCheckout</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Entity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>DiscardSharePointDocumentCheckout</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>DocumentId: <em>System.String</em></li>
+<li>SiteUrl: <em>System.String</em></li>
+<li>DocumentLocation: <em>System.String</em></li>
+<li>ReferencedEntity: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>EditDocumentProperties</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Entity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>EditSharePointDocumentProperties</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>DocumentId: <em>System.String</em></li>
+<li>FullName: <em>System.String</em></li>
+<li>Title: <em>System.String</em></li>
+<li>SiteUrl: <em>System.String</em></li>
+<li>DocumentLocation: <em>System.String</em></li>
+<li>ReferencedEntity: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>EnableNewFormsForAllUsers</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>ExecuteDataPerformanceAction</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>QueryingUnitId: <em>System.Guid</em></li>
+<li>ActionName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>ExecuteQuickFind</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SearchText: <em>System.String</em></li>
+<li>EntityGroupName: <em>System.String</em></li>
+<li>EntityNames: <em>System.String[]</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Result: <em>Microsoft.Xrm.Sdk.QuickFindResultCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ExpandWorkflows</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ExpansionTaskId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>ExportDynamicToExcel</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>View: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>FetchXml: <em>System.String</em></li>
+<li>LayoutXml: <em>System.String</em></li>
+<li>ExportType: <em>Microsoft.Crm.Sdk.Messages.ExportDynamicToExcelType</em></li>
+<li>PostData: <em>System.String</em></li>
+<li>IsRefresh: <em>System.Boolean</em></li>
+<li>QueryApi: <em>System.String</em></li>
+<li>QueryParameters: <em>Microsoft.Crm.Sdk.Messages.InputArgumentCollection</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ExcelFile: <em>System.Byte[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ExportFullSolution</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SolutionName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ExportSolutionFile: <em>System.Byte[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ExportLinearMappingsImportMap</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ImportMapId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>MappingsXml: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ExportTemplateToExcelOnline</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Template: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>FetchXml: <em>System.String</em></li>
+<li>QueryApi: <em>System.String</em></li>
+<li>QueryParameters: <em>Microsoft.Crm.Sdk.Messages.InputArgumentCollection</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EditLink: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ExportTemplateToExcel</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityLocalizedDisplayName: <em>System.String</em></li>
+<li>LayoutXml: <em>System.String</em></li>
+<li>FetchXml: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ExcelFile: <em>System.Byte[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ExportTemplateToWord</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityTypeCode: <em>System.Int32</em></li>
+<li>SelectedEntities: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>WordFile: <em>System.Byte[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ExportToExcelOnline</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>View: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>FetchXml: <em>System.String</em></li>
+<li>LayoutXml: <em>System.String</em></li>
+<li>QueryApi: <em>System.String</em></li>
+<li>QueryParameters: <em>Microsoft.Crm.Sdk.Messages.InputArgumentCollection</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EditLink: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ExportToExcel</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>View: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>FetchXml: <em>System.String</em></li>
+<li>LayoutXml: <em>System.String</em></li>
+<li>QueryApi: <em>System.String</em></li>
+<li>QueryParameters: <em>Microsoft.Crm.Sdk.Messages.InputArgumentCollection</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ExcelFile: <em>System.Byte[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ExportWordDocument</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityTypeCode: <em>System.Int32</em></li>
+<li>SelectedTemplate: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>SelectedRecords: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>WordFile: <em>System.Byte[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>FetchSiteUrl</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>DocumentId: <em>System.String</em></li>
+<li>RegardingObjectId: <em>System.String</em></li>
+<li>RegardingObjType: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>SiteAndLocationUrl: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>FireNotificationEvent</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EventType: <em>System.Int32</em></li>
+<li>EventData: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>FlushMetadataCache</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>FollowEmailAttachment</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ActivityMimeAttachmentId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Response: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>FollowInYammer</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Target: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>GenerateNumber</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>PrefixName: <em>System.String</em></li>
+<li>CurrentNumberName: <em>System.String</em></li>
+<li>AddSuffix: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>GeneratedNumber: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GenerateSnapshot</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ReportId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>GetActualDate</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Date: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Result: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetAssociatedDocuments</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>AssociatedDocumentsRequestParams: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>BusinessEntityCollection: <em>System.Object</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetAzureServiceConnectionIdByType</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ConnectionType: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ConnectionId: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetCommitmentSubjects</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ActivityIds: <em>System.Guid[]</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Subjects: <em>System.String[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetComponents</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CustomizationFile: <em>System.Byte[]</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>GetComponents: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetCurrentServerDateTimeInUtc</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityName: <em>System.String</em></li>
+<li>EntityId: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ServerDateTime: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetDataForTopicWordCloud</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Filter: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Topics: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetDefaultDocumentLibrary</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SiteUrl: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>DefaultDocumentLibrary: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetEmailLinkTrackingUrls</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>TrackingId: <em>System.Guid</em></li>
+<li>ConversationTrackingId: <em>System.Guid</em></li>
+<li>ClientType: <em>System.String</em></li>
+<li>EmailLinkUrls: <em>System.String[]</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EmailLinkTrackingUrls: <em>System.String[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetEmailTrackingPixelUrl</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>TrackingId: <em>System.Guid</em></li>
+<li>ConversationTrackingId: <em>System.Guid</em></li>
+<li>ClientType: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EmailTrackingPixelUrl: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetEntitiesForAzureML</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Filter: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Result: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetEntityWiseDuplicatesCount</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Entity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>DuplicatesCount: <em>System.Int32[]</em></li>
+<li>EntityLogicalNames: <em>System.String[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetFieldListForAzureML</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityName: <em>System.String</em></li>
+<li>Filter: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Result: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetMailMergeTargetEntityType</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CampaignActivityId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityType: <em>System.Int32</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetOutlookSyncDataSubscriptionClients</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ClientId: <em>System.Guid</em></li>
+<li>EntityName: <em>System.String</em></li>
+<li>SyncAction: <em>Microsoft.Crm.Sdk.Messages.SyncAction</em></li>
+<li>BatchSize: <em>System.Int32</em></li>
+<li>ColumnSetXml: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>SyncDataXml: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetRecommendationModelId</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>id: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetRecommendationModelVersionOverLimit</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RecommendationModelId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>BusinessEntity: <em>System.Object</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetRecommendations</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>VersionId: <em>System.Guid</em></li>
+<li>ItemIds: <em>System.Guid[]</em></li>
+<li>NumberOfResults: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetRelationshipsForAzureML</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityName: <em>System.String</em></li>
+<li>Filter: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Result: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetReportParameters</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ReportId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ParametersXml: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetRIProvisioningStatus</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ProvisioningStatus: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetRITenantEndpointUrl</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>TenantEndpointUrl: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetSimilarRecords</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Id: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetSyncDataSubscription</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SubscriptionId: <em>System.Guid</em></li>
+<li>EntityName: <em>System.String</em></li>
+<li>SyncAction: <em>Microsoft.Crm.Sdk.Messages.SyncAction</em></li>
+<li>BatchSize: <em>System.Int32</em></li>
+<li>ColumnSetXml: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>SyncDataXml: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetTrackingServiceBaseUrl</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>TrackingServiceBaseUrl: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetUnprocessedRecords</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityName: <em>System.String</em></li>
+<li>Columns: <em>System.String[]</em></li>
+<li>RuleId: <em>System.Guid</em></li>
+<li>PageSize: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>UnprocessedRecords: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+<li>VersionNumbers: <em>System.String[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>GetValidStatusTransition</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>IncidentId: <em>System.String</em></li>
+<li>ToStateCode: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Result: <em>System.Int32</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ImportLinearMappingsImportMap</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>MappingsXml: <em>System.String</em></li>
+<li>ReplaceIds: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ImportMapId: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>IntersectRecordsWithQueueAndAggregate</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>QueueId: <em>System.Guid</em></li>
+<li>ViewId: <em>System.Guid</em></li>
+<li>VisualizationId: <em>System.Guid</em></li>
+<li>InteractionCentricFilterXml: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>InviteUser</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>UserId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>InvitationToken: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>IsPartnerSolutionInstalled</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SolutionName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>IsPartnerSolutionInstalled: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>IsPrimaryClientSubscriptionClients</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ClientId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>isPrimaryClient: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>IsReportingDataConnectorInstalled</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>DataProviderType: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>IsReportingDataConnectorInstalled: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>IsServerWorkgroup</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>IsWorkgroup: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>IsSupportUserRole</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RoleId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>SupportUserRole: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>IsSystemAdministratorRole</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RoleId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>SystemAdministratorRole: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ListSnapshots</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ReportId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>HistoryIds: <em>System.String[]</em></li>
+<li>CreatedDates: <em>System.DateTime[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>LogExternalResultsClicked</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Source: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>LogFailureBulkOperation</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>BulkOperationId: <em>System.Guid</em></li>
+<li>RegardingObjectId: <em>System.Guid</em></li>
+<li>RegardingObjectTypeCode: <em>System.Int32</em></li>
+<li>ErrorCode: <em>System.Int32</em></li>
+<li>Message: <em>System.String</em></li>
+<li>AdditionalInfo: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>LogSuccessBulkOperation</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>BulkOperationId: <em>System.Guid</em></li>
+<li>RegardingObjectId: <em>System.Guid</em></li>
+<li>RegardingObjectTypeCode: <em>System.Int32</em></li>
+<li>CreatedObjectId: <em>System.Guid</em></li>
+<li>CreatedObjectTypeCode: <em>System.Int32</em></li>
+<li>AdditionalInfo: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>MigrateToS2S</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SiteUrl: <em>System.String</em></li>
+<li>EnableOneDrive: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>MobileOfflineDeprovision</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>MobileOfflineProvision</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>MyExecuteCampaignActivity</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CampaignActivityId: <em>System.Guid</em></li>
+<li>Propagate: <em>System.Boolean</em></li>
+<li>ActivityXml: <em>System.String</em></li>
+<li>TemplateId: <em>System.Guid</em></li>
+<li>OwnershipOptions: <em>Microsoft.Crm.Sdk.Messages.PropagationOwnershipOptions</em></li>
+<li>PostWorkflowEvent: <em>System.Boolean</em></li>
+<li>Owner: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>SendEmail: <em>System.Boolean</em></li>
+<li>QueueId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>BulkOperationId: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>NavigateToNextEntity</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CurrentEntityId: <em>System.Guid</em></li>
+<li>CurrentEntityLogicalName: <em>System.String</em></li>
+<li>NextEntityId: <em>System.Guid</em></li>
+<li>NextEntityLogicalName: <em>System.String</em></li>
+<li>NewActiveStageId: <em>System.Guid</em></li>
+<li>NewTraversedPath: <em>System.String</em></li>
+<li>ProcessId: <em>System.Guid</em></li>
+<li>ProcessInstanceId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>NewDocument</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>FileName: <em>System.String</em></li>
+<li>RegardingObjectId: <em>System.String</em></li>
+<li>RegardingObjectTypeCode: <em>System.String</em></li>
+<li>LocationId: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EditLink: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>OverrideDynamicProperties</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RegardingObject: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>DynamicPropertyCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>OverrideDynamicProperty</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RegardingObject: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>DynamicProperty: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Id: <em>System.Guid</em></li>
+<li>DynamicPropertyId: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>OverwriteDynamicProperty</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RegardingObject: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>DynamicProperty: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Id: <em>System.Guid</em></li>
+<li>DynamicPropertyId: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>PopulateCard</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>UserId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Data: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>PopulateRecommendationCacheForRecord</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ParentRecord: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ShowAzureRecommendations: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>PopulateRecommendationCache</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityName: <em>System.String</em></li>
+<li>ItemId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ShowAzureRecommendations: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>PostOutlookSyncSubscriptionClients</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ClientId: <em>System.Guid</em></li>
+<li>EntityName: <em>System.String</em></li>
+<li>SyncAction: <em>Microsoft.Crm.Sdk.Messages.SyncAction</em></li>
+<li>BatchSize: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>PostSyncSubscription</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SubscriptionId: <em>System.Guid</em></li>
+<li>EntityName: <em>System.String</em></li>
+<li>SyncAction: <em>Microsoft.Crm.Sdk.Messages.SyncAction</em></li>
+<li>BatchSize: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>PrepareOutlookSyncSubscriptionClients</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ClientId: <em>System.Guid</em></li>
+<li>Type: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>SyncInfoXml: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>PrepareSyncSubscription</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SubscriptionId: <em>System.Guid</em></li>
+<li>Type: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>SyncInfoXml: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ProcessOneMemberBulkOperation</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>BulkOperationId: <em>System.Guid</em></li>
+<li>Entity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+<li>BulkOperationSource: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ProcessResult: <em>System.Int32</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ProcessReplicationBacklog</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Target: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>PromoteToAdmin</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>UserId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>PublishAppModule</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>AppModuleId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>PublishExternal</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ReportId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>PublishKnowledgeArticle</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Entity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+<li>CopyRelatedProductFromAssociatedPrimary: <em>System.Boolean</em></li>
+<li>CopyRelatedCategoryFromAssociatedPrimary: <em>System.Boolean</em></li>
+<li>PublishApprovedRelatedTranslations: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>IsPublish: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>PublishResourceGroups</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>RegisterSolution</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>PluginAssembly: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+<li>Steps: <em>Microsoft.Crm.Sdk.Messages.SdkMessageProcessingStepRegistration[]</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>PluginAssemblyId: <em>System.Guid</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RemoveClientFromSubscriptionSubscriptionClients</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ClientId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>RemoveDynamicProperty</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RegardingObject: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>DynamicProperty: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>RemoveMembersByFetchXmlList</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ListId: <em>System.Guid</em></li>
+<li>FetchXml: <em>System.String</em></li>
+<li>KeepReturned: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>RenameFolderNameForOneDrive</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>FolderName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>RenameFolderName</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SiteUrl: <em>System.String</em></li>
+<li>FolderPath: <em>System.String</em></li>
+<li>NewFolderName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>RenderTemplateFromView</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Template: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>View: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ExcelFile: <em>System.Byte[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RenderTemplate</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Template: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>FetchXml: <em>System.String</em></li>
+<li>QueryApi: <em>System.String</em></li>
+<li>QueryParameters: <em>Microsoft.Crm.Sdk.Messages.InputArgumentCollection</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ExcelFile: <em>System.Byte[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ResetPerformanceReport</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>ResetSyncStateSubscription</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SubscriptionId: <em>System.Guid</em></li>
+<li>ResetSyncInfo: <em>Microsoft.Crm.Sdk.Messages.ResetSyncStateInfo[]</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>ResolveEmailAddress</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EmailAddresses: <em>System.String</em></li>
+<li>ObjectTypeCodes: <em>System.Int32[]</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Entities: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ResolveIncident</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>IncidentId: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>Status: <em>Microsoft.Xrm.Sdk.OptionSetValue</em></li>
+<li>BillableTime: <em>System.Int32</em></li>
+<li>Resolution: <em>System.String</em></li>
+<li>Remarks: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>ResolveQuote</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Subject: <em>System.String</em></li>
+<li>Status: <em>Microsoft.Xrm.Sdk.OptionSetValue</em></li>
+<li>QuoteId: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>Description: <em>System.String</em></li>
+<li>CloseDate: <em>System.DateTime</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveAADAccessToken</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ClientId: <em>System.String</em></li>
+<li>ServerId: <em>System.String</em></li>
+<li>Tenant: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>AccessToken: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveAttributeList</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RegardingObjectTypeCode: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Result: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveBusinessRulesForForm</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityTypeCode: <em>System.Int32</em></li>
+<li>FormId: <em>System.Guid</em></li>
+<li>BusinessProcessId: <em>System.Guid</em></li>
+<li>IncludeDraftRules: <em>System.Boolean</em></li>
+<li>DetailGridTypeCollectionString: <em>System.String</em></li>
+<li>IsHomePage: <em>System.Boolean</em></li>
+<li>IsAssociatedGrid: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>BusinessRulesScript: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveCardData</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CardTypeId: <em>System.Guid</em></li>
+<li>AdditionalParameter: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Data: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveClientSubscriptionSubscriptionClients</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ClientId: <em>System.Guid</em></li>
+<li>ColumnSet: <em>Microsoft.Xrm.Sdk.Query.ColumnSet</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Entity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveCollation</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Result: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveCustomersNotPlacedOrders</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Query: <em>Microsoft.Xrm.Sdk.Query.QueryBase</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveDashboardForms</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SystemUserId: <em>System.Guid</em></li>
+<li>AppModuleId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>SystemForms: <em>Microsoft.Xrm.Sdk.EntityReferenceCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveDefaultStatusForState</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityName: <em>System.String</em></li>
+<li>State: <em>Microsoft.Xrm.Sdk.OptionSetValue</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Status: <em>Microsoft.Xrm.Sdk.OptionSetValue</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveDocumentsFromAllLocationsAndShared</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Query: <em>Microsoft.Xrm.Sdk.Query.QueryBase</em></li>
+<li>AllSitesAndLocations: <em>System.String</em></li>
+<li>ReferencedEntity: <em>System.String</em></li>
+<li>PageToken: <em>System.String</em></li>
+<li>SharedDocuments: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>BusinessEntityCollection: <em>System.Object</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveDocumentTemplates</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityTypeCode: <em>System.Int32</em></li>
+<li>DocumentType: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>DocumentTemplateEntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveEntitiesForAggregateQuery</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>OuterQuery: <em>Microsoft.Xrm.Sdk.Query.QueryBase</em></li>
+<li>SubQueries: <em>Microsoft.Crm.Sdk.Messages.QueryByEntityNameDictionary</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveEntitiesToFilter</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CampaignActivityId: <em>System.Guid</em></li>
+<li>EntityName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveEntitiesToMailMerge</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CampaignActivityId: <em>System.Guid</em></li>
+<li>Query: <em>Microsoft.Xrm.Sdk.Query.QueryBase</em></li>
+<li>EntityName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveEntitiesToSync</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ClientId: <em>System.Guid</em></li>
+<li>EntityName: <em>System.String</em></li>
+<li>SyncAction: <em>Microsoft.Crm.Sdk.Messages.SyncAction</em></li>
+<li>BatchSize: <em>System.Int32</em></li>
+<li>ColumnSetXml: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveEntitlementsForCase</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>CustomerId: <em>System.String</em></li>
+<li>PrimaryContactId: <em>System.String</em></li>
+<li>ProductId: <em>System.String</em></li>
+<li>Query: <em>Microsoft.Xrm.Sdk.Query.QueryBase</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveEntityDynamicPropertyDefinitions</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RegardingObject: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>ForDraftRegarding: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveEntityGroupConfiguration</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityGroupName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityGroupConfiguration: <em>Microsoft.Xrm.Sdk.QuickFindConfigurationCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveEntityXml</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityXml: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveExternalRequiredComponents</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ComponentId: <em>System.Guid</em></li>
+<li>ComponentType: <em>System.Int32</em></li>
+<li>IncludeSubcomponents: <em>System.Boolean</em></li>
+<li>SolutionUniqueName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveExternalRoots</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ComponentId: <em>System.Guid</em></li>
+<li>ComponentType: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveFilteredProcesses</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityLogicalName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Processes: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveImportJobProgress</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ImportJobId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Progress: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveItemIdsForRecord</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ParentRecord: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ItemIds: <em>System.Guid[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveKeyPhrasesForKnowledgeSearch</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Target: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>KeyPhrases: <em>System.String[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveKeyPhrasesForSimilaritySearch</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Target: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>KeyPhrases: <em>System.String[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveLanguagesAvailableForProvisioning</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>LanguagesAvailableForProvisioning: <em>System.Int32[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveMetadataChangesForRichClient</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>LastTimestamp: <em>System.Int64</em></li>
+<li>LastSyncTime: <em>System.DateTime</em></li>
+<li>LastUserLanguage: <em>System.Int32</em></li>
+<li>MetadataVersion: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>SyncType: <em>System.Byte</em></li>
+<li>NewTimestamp: <em>System.Int64</em></li>
+<li>NewSyncTime: <em>System.DateTime</em></li>
+<li>NewUserLanguage: <em>System.Int32</em></li>
+<li>NewCalculatedTimestamp: <em>System.String</em></li>
+<li>AddedOrUpdatedLocalizedLabelMetadata: <em>System.Byte[]</em></li>
+<li>AddedOrUpdatedOtherMetadata: <em>System.Byte[]</em></li>
+<li>DeletedMetadata: <em>System.Byte[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveMetadataForRichClient</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Metadata: <em>System.Byte[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveMultipleSystemFormsWithAllLabels</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Query: <em>Microsoft.Xrm.Sdk.Query.QueryBase</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveOfficeGroupsSetting</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SettingType: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Setting: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveOptionalFeatureStatus</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Name: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>IsEnabled: <em>System.Boolean</em></li>
+<li>InstallationStatus: <em>System.Int32</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrievePerformanceReport</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>DumpStrategy: <em>System.Int32</em></li>
+<li>FilterByOrganization: <em>System.Boolean</em></li>
+<li>FilterByTestName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ReportXml: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrievePersonalSite</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SiteUrl: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>PersonalSiteUrl: <em>System.String</em></li>
+<li>MainSiteUrl: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrievePersonalSiteUrl</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>PersonalSiteUrl: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrievePrivilegeMaxDepthFromTeamRoles</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>UserId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>RolePrivileges: <em>Microsoft.Crm.Sdk.Messages.RolePrivilege[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveProcessActiveStage</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityId: <em>System.Guid</em></li>
+<li>EntityLogicalName: <em>System.String</em></li>
+<li>ProcessId: <em>System.Guid</em></li>
+<li>ProcessInstanceId: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Entity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveProcessControlData</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Target: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>ProcessId: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>ProcessInstanceId: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Entity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+<li>GlobalNavigationData: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveProcessWithFallback</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityLogicalName: <em>System.String</em></li>
+<li>Process: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>AppModuleId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Entity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrievePublishedAppModuleWithLocale</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>LcId: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>AppModuleCollection: <em>Microsoft.Crm.Sdk.Messages.AppModuleCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveRecommendationLineItemMetadata</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ParentEntityName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>RecommendationLineItemMetadata: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveRecommendationLineItemProducts</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ParentEntityName: <em>System.String</em></li>
+<li>ParentEntityId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>RecommendationLineItemProducts: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveRecommendationsCount</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ParentRecord: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>PriceLevelId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>RecommendationsCount: <em>System.Int32</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveReferenceSiteMap</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Entity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveReportSqlFromQuery</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>FetchXml: <em>System.String</em></li>
+<li>UseStoredProcedures: <em>System.Boolean</em></li>
+<li>RetrieveAllColumns: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ReportSql: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveSharePointData</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Query: <em>Microsoft.Xrm.Sdk.Query.QueryBase</em></li>
+<li>SiteUrl: <em>System.String</em></li>
+<li>DocumentLocation: <em>System.String</em></li>
+<li>ReferencedEntity: <em>System.String</em></li>
+<li>PageToken: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>BusinessEntityCollection: <em>System.Object</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveSharePointGlobalSettings</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>SharePointGlobalSetting: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveTenantInfo</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>TenantInfo: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveTrendingDocuments</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Query: <em>Microsoft.Xrm.Sdk.Query.QueryBase</em></li>
+<li>SharePointSiteUrl: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>BusinessEntityCollection: <em>System.Object</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveUserDefaultCurrency</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Currency: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveValidSLA</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RecordTypeName: <em>System.String</em></li>
+<li>RecordId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>BusinessEntity: <em>System.Object</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RetrieveWallByView</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>View: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>PagingCookie: <em>System.String</em></li>
+<li>PageNumber: <em>System.Int32</em></li>
+<li>PageSize: <em>System.Int32</em></li>
+<li>CommentsPerPost: <em>System.Int32</em></li>
+<li>Source: <em>Microsoft.Xrm.Sdk.OptionSetValue</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>RollupForActivityWall</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Target: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>Query: <em>Microsoft.Xrm.Sdk.Query.QueryBase</em></li>
+<li>RollupType: <em>Microsoft.Crm.Sdk.Messages.RollupType</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EntityCollection: <em>Microsoft.Xrm.Sdk.EntityCollection</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>SaveEntityGroupConfiguration</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityGroupName: <em>System.String</em></li>
+<li>EntityGroupConfiguration: <em>Microsoft.Xrm.Sdk.QuickFindConfigurationCollection</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>ScheduleBuildTopicModel</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>TopicModelId: <em>System.Guid</em></li>
+<li>ScheduleBuildStartTime: <em>System.DateTime</em></li>
+<li>ScheduleBuildRecurrence: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>SearchDocument</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RegardingObjectType: <em>System.Int32</em></li>
+<li>RegardingObjectId: <em>System.String</em></li>
+<li>DocumentId: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>SearchLocation: <em>System.String</em></li>
+<li>DocumentLocation: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>SearchSharePointDocument</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SiteUrl: <em>System.String</em></li>
+<li>DocumentLocation: <em>System.String</em></li>
+<li>ReferencedEntity: <em>System.String</em></li>
+<li>GetSharedDocumentsKeyword: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>SearchLocation: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>SetActionCardState</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ActionCardId: <em>System.Guid</em></li>
+<li>ActionState: <em>Microsoft.Xrm.Sdk.OptionSetValue</em></li>
+<li>MessageId: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>SetDevErrors</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>UserId: <em>System.Guid</em></li>
+<li>OrganizationId: <em>System.Guid</em></li>
+<li>Value: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>SetOptionalFeatureStatus</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Name: <em>System.String</em></li>
+<li>NewStatus: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>SetPrimaryClientSubscriptionClients</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ClientId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>SetStateAzureServiceConnection</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>EntityMoniker: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>State: <em>System.Int32</em></li>
+<li>Status: <em>System.Int32</em></li>
+<li>CascadeModelState: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>SetWordTemplate</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Target: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>SelectedTemplate: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>ShouldDisplaySLALimitNotification</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>RegardingObjectTypeCode: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>Result: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>SnoozeActionCard</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ActionCardId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>StartRIProvisioning</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>HubName: <em>System.String</em></li>
+<li>PrimaryKey: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>StatusUpdateBulkOperation</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>BulkOperationId: <em>System.Guid</em></li>
+<li>FailureCount: <em>System.Int32</em></li>
+<li>SuccessCount: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>TestAzureServiceConnection</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>AzureServiceConnectionId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>TestTopicModel</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>TopicModelId: <em>System.Guid</em></li>
+<li>ConfigurationUsedId: <em>System.Guid</em></li>
+<li>MaxTopics: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>ToggleGuidedHelp</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Value: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>ToggleGuidedHelp</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Value: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>TrackEmail</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ExchangeItemId: <em>System.String</em></li>
+<li>Regarding: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>UnfollowEmailAttachment</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ActivityMimeAttachmentId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>UnregisterSolution</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>PluginAssemblyId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>UpdateDelveActionStatus</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>MessageId: <em>System.String</em></li>
+<li>ActionState: <em>System.Int32</em></li>
+<li>RecordId: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>UpdateDocumentManagementSettings</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SiteCollection: <em>System.String</em></li>
+<li>FolderStructureEntity: <em>System.Int32</em></li>
+<li>EntityDocMgmtXml: <em>System.String</em></li>
+<li>ValidateStatus: <em>System.Int32</em></li>
+<li>ValidateStatusReason: <em>System.Int32</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>UpdateFromTemplate</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ReportId: <em>System.Guid</em></li>
+<li>WizardXml: <em>System.String</em></li>
+<li>IsOrgReport: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>UpdateGlobalSharePointSettings</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SharePointRealm: <em>System.String</em></li>
+<li>IsSharePointOnline: <em>System.Boolean</em></li>
+<li>UseAuthorizationServer: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>UpdateRITenantInfo</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>HubName: <em>System.String</em></li>
+<li>PrimaryKey: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>UpdateSchedule</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>ReportId: <em>System.Guid</em></li>
+<li>ScheduleXml: <em>System.String</em></li>
+<li>ParameterXml: <em>System.String</em></li>
+<li>ScheduledReportName: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>UpdateYammerProperties</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>BusinessEntity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>UpgradeToS2S</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>UploadDocument</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Content: <em>System.Byte[]</em></li>
+<li>Entity: <em>Microsoft.Xrm.Sdk.Entity</em></li>
+<li>OverwriteExisting: <em>System.Boolean</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+</td>
+</tr>
+<tr>
+<td><strong>UploadSharePointDocument</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>DocumentContent: <em>System.String</em></li>
+<li>FileName: <em>System.String</em></li>
+<li>OverwriteExisting: <em>System.Boolean</em></li>
+<li>SiteUrl: <em>System.String</em></li>
+<li>DocumentLocation: <em>System.String</em></li>
+<li>ReferencedEntity: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>EditLink: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ValidateAppModule</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>AppModuleId: <em>System.Guid</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>AppModuleValidation: <em>Microsoft.Crm.Sdk.Messages.AppModuleValidationResponse</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ValidateOfficeGraphAuthentication</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ValidationResult: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ValidateSharePointFolder</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>FolderUrls: <em>System.String[]</em></li>
+<li>SiteUrls: <em>System.String[]</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ValidationStatus: <em>System.Boolean[]</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ValidateSharePointSite</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SiteUrls: <em>System.String[]</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>ValidationStatus: <em>System.Boolean[]</em></li>
+<li>ValidationLog: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>ValidateUrl</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>SharePointUrls: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>UrlValidationResult: <em>System.String</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>VerifyProcessStateData</strong></td>
+<td>
+<p style="margin:0, 0, 0, 0;">Input:</p>
+<ul>
+<li>Target: <em>Microsoft.Xrm.Sdk.EntityReference</em></li>
+<li>ProcessState: <em>System.String</em></li>
+</ul>
+<p style="margin:0, 0, 0, 0;">Output:</p>
+<ul>
+<li>IsValid: <em>System.Boolean</em></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+ </body>  
+</html>  
