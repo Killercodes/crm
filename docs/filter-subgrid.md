@@ -1,3 +1,8 @@
+# Filter Subgrid
+
+Sample code for filtering subgrid
+
+```js
 function modifyRibbon() {
     //to store the original function ones
     var originalFunctionAddNewStandard = Mscrm.GridRibbonActions.addNewFromSubGridStandard;
@@ -48,3 +53,5 @@ Xrm.Internal.openDialog('http://mycrmserver?id=' + Xrm.Page.data.entity.getId(),
         gridcontrol.Refresh();
     }
 }
+
+```
