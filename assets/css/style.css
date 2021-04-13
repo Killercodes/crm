@@ -156,6 +156,16 @@ img {
   clear: both;
 }
 
+/**********************/
+/* SITE CUSTOMIZATION */
+/**********************/
+
+.container-lg {
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 /*********************/
 /* LAYOUT / SECTIONS */
 /*********************/
