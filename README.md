@@ -1,4 +1,5 @@
 ***
+# Docs
 * [StateCode & Statuscode](/docs/StatecodeAndStatuscode.md)
 * [Undocuemnt Crm SDK Messages](/docs/undocumentedCrmSdkMessage.html)
 * [Pass data between plug-ins](/docs/Pass%20data%20between%20plug-ins.md)
@@ -6,3 +7,7 @@
 * [IPluginExecutionContext](/docs/IPluginExecutionContext.md)
 * [Dynamics 365 Plugin & Workfloe](/docs/plugin-bible.md)
 * [Xrm Scripting](/docs/xrm-script.md)
+
+
+# Tools
+* [Get Record Guid](/tool/get-guid.html)
