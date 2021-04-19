@@ -10,4 +10,4 @@
 
 
 # Tools
-* [Get Record Guid](/tool/get-guid.html)
+* [Get Record Guid](/tool/guid/)
