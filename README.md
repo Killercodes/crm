@@ -11,3 +11,4 @@
 
 # Tools
 * [Get Record Guid](/dynamics/tool/guid/)
+* [Get Error Message by Code](/dynamics/tool/error/)
