@@ -10,4 +10,4 @@
 
 
 # Tools
-* [Get Record Guid](/tool/guid/)
+* [Get Record Guid](/dynamics/tool/guid/)
