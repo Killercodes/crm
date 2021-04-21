@@ -11,7 +11,7 @@
             width:800px;
         }
         body{
-            margin: 20px:
+            margin: 30px:
         }
     </style>    
     <script>
@@ -22,14 +22,7 @@
         function parseData(){
             let input_str = Id("data-url");
             input_str = input_str.value.trim()
-            input_str = input_str.replace(">","").replace("<",""); input_str=decodeURI(input_str); /* let
-            countGuid=(input_str.match(/{/g) || []).length; let all_guid=input_str.split("{"); let all_result="" ;
-            all_guid.forEach(element=> {
-
-            var guids = element.substring(element.indexOf('{') + 1, element.indexOf('}'));
-            all_result += "\n" + guids;
-            });
-            */
+            input_str = input_str.replace(">","").replace("<",""); input_str=decodeURI(input_str);
             let guid = input_str.substring(input_str.indexOf('{') + 1, input_str.indexOf('}'));
 
             //var i = prompt("Copy the guid and click OK",guid);
@@ -37,8 +30,8 @@
             result.value = guid;
             result.select();
             document.execCommand("copy");
-            alert("Copied the text: " + copyText.value);
-            }
+            
+        }
     </script>
 </head>
 <body>
