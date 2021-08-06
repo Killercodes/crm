@@ -56,7 +56,7 @@ li.dropdown {
 </head>
   <body>
   <ul>
-  <li><a href="#home">Dynamics 365 CE</a></li>
+  <li><a href="#home">Dynamics 365</a></li>
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Docs</a>
     <div class="dropdown-content">
@@ -68,16 +68,20 @@ li.dropdown {
 </ul>
     <center><h1>Listing</h1></center>
     <script>
-      (async () => {
+     (async () => {
         const response = await fetch("https://api.github.com/repos/Killercodes/dynamics/contents/docs");
         //'https://api.github.com/repos/Killercodes/Demo-Tutorial/contents/');
         const data = await response.json();
         let htmlString = '';
+        console.info(data);
+
         for (let file of data) 
         {
-            var actualpath= "https://killercodes.github.io/dynamics/" + file.path;
-          htmlString += `<a href="${file.name}">${file.name}</a>`;
+          var actualpath= "https://killercodes.github.io/dynamics/" + file.path;
+          var fileName = (file.path).replace(".md","");
+          htmlString += `<a href="${fileName}">${file.name}</a>`;
         }
+
         htmlString += '';
         var result= '<ul><li><a href="#home">Dynamics 365 CE</a></li><li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Documents</a><div class="dropdown-content">';
         result += htmlString;
