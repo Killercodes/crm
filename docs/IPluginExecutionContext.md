@@ -18,14 +18,14 @@ public interface IPluginExecutionContext : IExecutionContext
 ## Properties
 
 ### IExecutionContext.BusinessUnitId
-Gets the GUID of the business unit that the user making the request, also known as the calling user, belongs to.
+Gets the `GUID` of the business unit that the user making the request, also known as the calling user, belongs to.
 
 #### Synatx
 ```cs
 Guid BusinessUnitId { get; }
 ```
 #### Property Value
-The GUID of the business unit. This property corresponds to the BusinessUnitId property, which is the primary key for the BusinessUnit entity.
+The `GUID` of the business unit. This property corresponds to the BusinessUnitId property, which is the primary key for the BusinessUnit entity.
 
 
 
@@ -39,7 +39,7 @@ Guid CorrelationId { get; }
 ```
 #### Property Value
 **Type:** System.Guid
-The GUID for tracking plug-in or custom workflow activity execution.
+The `GUID` for tracking plug-in or custom workflow activity execution.
 
 #### Remarks
 This property is used by the platform for infinite loop prevention. In most cases, this property can be ignored.
@@ -54,7 +54,7 @@ Syntax
 int Depth { get; }
 ```
 #### Property Value
-Type: System.Int32
+**Type:** `System.Int32`
 T the current depth of execution in the call stack.
 
 #### Remarks
@@ -65,92 +65,75 @@ Every time a running plug-in or Workflow issues a message request to the Web ser
 The maximum depth (8) and time limit (one hour) are configurable by the Microsoft Dynamics 365 administrator using the PowerShell command Set-CrmSetting. The setting is WorkflowSettings.MaxDepth. For more information, see, “Administer the deployment using Windows PowerShell” in the Deploying and administering Microsoft Dynamics CRM.
 
 ### IExecutionContext.InitiatingUserId Property
-11/28/2016
-2 minutes to read
- 
 
-Applies To: Dynamics 365 (online), Dynamics 365 (on-premises), Dynamics CRM 2016, Dynamics CRM Online
+**Applies To:** Dynamics 365 (online), Dynamics 365 (on-premises), Dynamics CRM 2016, Dynamics CRM Online
 
-Gets the GUID of the system user account under which the current pipeline is executing.
+> Gets the GUID of the system user account under which the current pipeline is executing.
 
-Namespace:   Microsoft.Xrm.Sdk
-Assembly:  Microsoft.Xrm.Sdk (in Microsoft.Xrm.Sdk.dll)
+**Namespace:**   `Microsoft.Xrm.Sdk`
+**Assembly:**  `Microsoft.Xrm.Sdk` (in Microsoft.Xrm.Sdk.dll)
 
 Syntax
-C#
-
-Copy
+```cs
 Guid InitiatingUserId { get; }
-Property Value
-Type: System.Guid
+```
+#### Property Value
+**Type:** `System.Guid`
 
-Type: Guid
+**Type:** `Guid`
 The GUID of the system user account under which the current pipeline is executing. This property corresponds to the SystemUserId property, which is the primary key for the SystemUser entity.
 
 ### IExecutionContext.InputParameters Property
-11/28/2016
-2 minutes to read
- 
 
-Applies To: Dynamics 365 (online), Dynamics 365 (on-premises), Dynamics CRM 2016, Dynamics CRM Online
+**Applies To:** Dynamics 365 (online), Dynamics 365 (on-premises), Dynamics CRM 2016, Dynamics CRM Online
 
-Gets the parameters of the request message that triggered the event that caused the plug-in to execute.
+> Gets the parameters of the request message that triggered the event that caused the plug-in to execute.
 
-Namespace:   Microsoft.Xrm.Sdk
-Assembly:  Microsoft.Xrm.Sdk (in Microsoft.Xrm.Sdk.dll)
+**Namespace:**   `Microsoft.Xrm.Sdk`
+**Assembly:**  `Microsoft.Xrm.Sdk` (in Microsoft.Xrm.Sdk.dll)
 
-Syntax
-C#
+**Syntax**
+`ParameterCollection InputParameters { get; }`
+#### Property Value
+**Type:** `Microsoft.Xrm.Sdk.ParameterCollection`
 
-Copy
-ParameterCollection InputParameters { get; }
-Property Value
-Type: Microsoft.Xrm.Sdk.ParameterCollection
-
-Type: ParameterCollection
+**Type:** `ParameterCollection`
 The parameters of the request message that triggered the event that caused the plug-in to execute.
 
 ### IExecutionContext.IsExecutingOffline Property
-11/28/2016
-2 minutes to read
- 
 
-Applies To: Dynamics 365 (online), Dynamics 365 (on-premises), Dynamics CRM 2016, Dynamics CRM Online
+**Applies To:** Dynamics 365 (online), Dynamics 365 (on-premises), Dynamics CRM 2016, Dynamics CRM Online
 
 Gets whether the plug-in is executing from the Microsoft Dynamics 365 for Microsoft Office Outlook with Offline Access client while it is offline.
 
-Namespace:   Microsoft.Xrm.Sdk
-Assembly:  Microsoft.Xrm.Sdk (in Microsoft.Xrm.Sdk.dll)
+**Namespace:**   `Microsoft.Xrm.Sdk`
+**Assembly:**  `Microsoft.Xrm.Sdk` (in Microsoft.Xrm.Sdk.dll)
 
-Syntax
-C#
-
-Copy
+**Syntax**
+```
 bool IsExecutingOffline { get; }
-Property Value
-Type: System.Boolean
+```
+#### Property Value
+**Type:** `System.Boolean`
 
-Type: Boolean
+**Type:** `Boolean`
 true if the plug-in is executing from the Microsoft Dynamics 365 for Microsoft Office Outlook with Offline Access client while it is offline; otherwise, false.
 
 ### IExecutionContext.IsInTransaction Property
-11/28/2016
-2 minutes to read
- 
 
-Applies To: Dynamics 365 (online), Dynamics 365 (on-premises), Dynamics CRM 2016, Dynamics CRM Online
+**Applies To:** Dynamics 365 (online), Dynamics 365 (on-premises), Dynamics CRM 2016, Dynamics CRM Online
 
 Gets a value indicating if the plug-in is executing within the database transaction.
 
-Namespace:   Microsoft.Xrm.Sdk
-Assembly:  Microsoft.Xrm.Sdk (in Microsoft.Xrm.Sdk.dll)
+**Namespace:**   `Microsoft.Xrm.Sdk`
+**Assembly:**  `Microsoft.Xrm.Sdk` (in Microsoft.Xrm.Sdk.dll)
 
 Syntax
 C#
 
-Copy
+```cs
 bool IsInTransaction { get; }
-Property Value
+```Property Value
 Type: System.Boolean
 
 Type: Boolean
