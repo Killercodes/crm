@@ -72,6 +72,11 @@ li.dropdown {
         htmlString += '';
         var result= '<ul><li><a href="#home">Dynamics 365 CE</a></li><li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Documents</a><div class="dropdown-content">';
         result += htmlString;
+        result += '</div></li>'
+        result += '<li class="dropdown"><a class="dropbtn">Tools</a><div class="dropdown-content">';
+        result += '<a href="tool/guid" target="IFcontent">Get Record Guid</a>';
+        result += '<a href="tool/error/7.2" target="IFcontent">Error Code CRM 7.2</a>'; 
+        result += '<a href="tool/error/8.2" target="IFcontent">Error Code CRM 8.2</a>';   
         result += '</div></li></ul>';
 
         document.getElementById('menu-bar').innerHTML = result;
