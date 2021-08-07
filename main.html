@@ -55,31 +55,18 @@ li.dropdown {
 </style>
 </head>
   <body>
-  <ul>
-  <li><a href="#home">Dynamics 365</a></li>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Docs</a>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </li>
-</ul>
-    <center><h1>Listing</h1></center>
+    <div id="menu-bar">change</div>
     <script>
-     (async () => {
+      (async () => {
         const response = await fetch("https://api.github.com/repos/Killercodes/dynamics/contents/docs");
-        //'https://api.github.com/repos/Killercodes/Demo-Tutorial/contents/');
         const data = await response.json();
         let htmlString = '';
-        console.info(data);
 
         for (let file of data) 
         {
           var actualpath= "https://killercodes.github.io/dynamics/" + file.path;
           var fileName = (file.path).replace(".md","");
-          htmlString += `<a href="${fileName}">${file.name}</a>`;
+          htmlString += `<a href="${fileName}" target="IFcontent">${file.name}</a>`;
         }
 
         htmlString += '';
@@ -87,8 +74,10 @@ li.dropdown {
         result += htmlString;
         result += '</div></li></ul>';
 
-        document.getElementsByTagName('body')[0].innerHTML = result;
+        document.getElementById('menu-bar').innerHTML = result;
       })()
     </script>
+    
+    <iframe id="cont" name="IFcontent" src="" frameborder="0" style="width: 100%;height: 100%;"></iframe>
   <body>
 </html>
