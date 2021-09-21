@@ -1,0 +1,279 @@
+<!DOCTYPE HTML []>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" href="/dynamics/assets/css/style.css">
+    <style type="text/css">
+body {
+	margin: 0.3em 0.3em 0.4em 0.4em;
+	font-family: Verdana;
+	font-size: 80%;
+	background: white;
+}
+
+p, pre {
+	margin:0;
+	padding:0;
+	font-family: Verdana;
+}
+
+table {
+	border-collapse: collapse;
+	border: 2px solid #17b;
+	margin: 0.3em 0.2em;
+}
+
+table.limit {
+	border-collapse: collapse;
+	border-bottom: 2px solid #c31;
+}
+
+td, th {
+	vertical-align: top;
+	border: 1px solid #aaa;
+	padding: 0.1em 0.2em;
+	margin: 0;
+}
+
+th {
+	text-align: left;
+	background-color: #ddd;
+	border: 1px solid #777;
+	font-family: tahoma;
+	font-size:90%;
+	font-weight: bold;
+}
+
+th.member {
+	padding: 0.1em 0.2em 0.1em 0.2em;
+}
+
+td.typeheader {
+	font-family: tahoma;
+	font-size: 100%;
+	font-weight: bold;
+	background-color: #17b;
+	color: white;
+	padding: 0 0.2em 0.15em 0.1em;
+}
+
+td.n { text-align: right }
+
+a:link.typeheader, a:visited.typeheader, a:link.extenser, a:visited.extenser {
+	font-family: tahoma;
+	font-size: 90%;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #17b;
+	color: white;
+	float:left;
+}
+
+a:link.extenser, a:visited.extenser {
+	float:right; 
+	padding-left:2pt;
+	margin-left:4pt
+}
+
+span.typeglyph, span.typeglyphx {
+	padding: 0 0.2em 0 0;
+	margin: 0;
+}
+
+span.extenser, span.extenserx {	
+	margin-top:1.2pt;
+}
+
+span.typeglyph, span.extenser {
+	font-family: webdings;
+}
+
+span.typeglyphx, span.extenserx {
+	font-family: arial;
+	font-weight: bold;
+	margin: 2px;
+}
+
+table.group {
+	border: none;
+	margin: 0;
+}
+
+td.group {
+	border: none;
+	padding: 0 0.1em;
+}
+
+div.spacer { margin: 0.6em 0; }
+
+table.headingpresenter {
+	border: none;
+	border-left: 3px dotted #1a5;
+	margin: 1em 0em 1.2em 0.15em;
+}
+
+th.headingpresenter {
+	font-family: Arial;
+	border: none;
+	padding: 0 0 0.2em 0.5em;
+	background-color: white;
+	color: green;
+	font-size: 110%;        
+}
+
+td.headingpresenter {
+	border: none;
+	padding: 0 0 0 0.6em;
+}
+
+td.summary { 
+	background-color: #def;
+	color: #024;
+	font-family: Tahoma;
+	padding: 0 0.1em 0.1em 0.1em;
+}
+
+td.columntotal {
+	font-family: Tahoma;
+	background-color: #eee;
+	font-weight: bold;
+	color: #17b;
+	font-size:90%;
+	text-align:right;
+}
+
+span.graphbar {
+	background: #17b;
+	color: #17b;
+	margin-left: -2px;
+	margin-right: -2px;
+}
+
+a:link.graphcolumn, a:visited.graphcolumn {
+	color: #17b;
+	text-decoration: none;
+	font-weight: bold;
+	font-family: Arial;
+	font-size: 110%;
+	letter-spacing: -0.2em;	
+	margin-left: 0.3em;
+	margin-right: 0.1em;
+}
+
+a:link.collection, a:visited.collection { color: green }
+
+a:link.reference, a:visited.reference { color:blue }
+
+i { color: green; }
+
+em { color: red; }
+
+span.highlight { background: #ff8; }
+
+code { font-family: Consolas }
+
+code.xml b { color:blue; font-weight:normal }
+code.xml i { color:maroon; font-weight:normal; font-style:normal }
+code.xml em { color:red; font-weight:normal; font-style:normal }
+
+#myInput {
+  
+  width: 100%; /* Full-width */
+  font-size: 26px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+  color: #FF0000;
+  background-color: #FFFFFF;
+  font-weight: bold;
+}
+    </style>
+  <script>
+function myError() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("t1");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+<script src=
+"https://code.jquery.com/jquery-3.5.1.js">
+    </script>
+  
+  </head>
+  <body>
+  <h1>Dynamics 365 CE: Client Scripting</h1>
+    <div class="spacer">
+       <input type="text" id="myInput" onkeyup="myError()" placeholder="Type Error Code here...">
+      <!--<table id="t1">
+        <tr>
+          <th title="System.Object">Error Code</th>
+          <th title="System.Object">Message</th>
+        </tr>
+        
+        <tr><td>-2147087956</td><td>You can’t add the BusinessDataLocalizedLabel entity to the mobile offline profile item because it’s added automatically when the Product entity is added to the profile.</td></tr>
+        <tr><td>-2147087957</td><td>You can’t add the intersect entity to the mobile offline profile item because it’s added automatically when its parent entities are added to the profile.</td></tr>
+
+      </table>-->
+      
+      <table id='table'>
+            <!-- HEADING FORMATION -->
+            <tr>
+                <th>prefix</th>
+                <th>description</th>
+                <th>body</th>
+                
+            </tr>
+  
+            <script>
+                $(document).ready(function () {
+  
+                    // FETCHING DATA FROM JSON FILE
+                    $.getJSON("attributes.json", 
+                            function (data) {
+                        var student = '';
+  
+                        // ITERATING THROUGH OBJECTS
+                        $.each(data, function (key, value) {
+  
+                            //CONSTRUCTION OF ROWS HAVING
+                            // DATA FROM JSON OBJECT
+                            student += '<tr>';
+                            student += '<td>' + 
+                                value.prefix + '</td>';
+  
+                            student += '<td>' + 
+                                value.description + '</td>';
+  
+                            student += '<td>' + 
+                                value.body + '</td>';
+  
+                            //student += '<td>' + value.Articles + '</td>';
+  
+                            student += '</tr>';
+                        });
+                          
+                        //INSERTING ROWS INTO TABLE 
+                        $('#table').append(student);
+                    });
+                });
+            </script>
+    </div>
+  </body>
+</html>
