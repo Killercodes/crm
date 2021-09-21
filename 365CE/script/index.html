@@ -13,9 +13,11 @@ body {
 }
 
 p, pre {
-	margin:0;
-	padding:0;
+	margin:10px;
+	padding:10px;
 	font-family: Verdana;
+	background-color: #f1f1f1;
+	font-size: 14px;
 }
 
 table {
@@ -165,7 +167,7 @@ a:link.collection, a:visited.collection { color: green }
 
 a:link.reference, a:visited.reference { color:blue }
 
-i { color: green; }
+i { color: green; font-size: 12px;}
 
 em { color: red; }
 
@@ -244,10 +246,9 @@ function myError() {
                             student += '<tr>';
                             student += '<td>' +  value.prefix + '</td>';
   
-                            student += '<td><i>//' + value.description + '</i><br>';
+                            student += '<td><pre><i> //' + value.description + '</i><br><br>';
   
-                            student += '<pre><b>' + 
-                                value.body + '</b></pre></td>';
+                            student += '' + value.body + '</pre></td>';
   
                             student += '</tr>';
                         });
