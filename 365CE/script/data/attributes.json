@@ -187,5 +187,1766 @@
         "body": [
             "formContext.getAttribute('${1:fieldName}').setValue(${2:value});"
         ]
+    },
+        "Control Add Custom Filter": {
+        "prefix": "FormContextControlAddCustomFilter",
+        "description": "Adds filters to the results displayed in the lookup. Each filter will be combined with any previously added filters as an “AND” condition.",
+        "body": [
+            "var entityName = '${1:account}';",
+            "var filter = '<filter type=\"and\"><condition attribute=\"address1_city\" operator=\"eq\" value=\"Redmond\" /></filter>';",
+            "",
+            "formContext.getControl('${2:fieldName}').addCustomFilter(filter, entityName);"
+        ]
+    },
+    "Control Add Custom View": {
+        "prefix": "FormContextControlAddCustomView",
+        "description": "Adds a new view for the lookup dialog box.",
+        "body": [
+            "var viewId = '${1:00000000-0000-0000-0000-000000000001}';",
+            "var entityName = '${2:account}';",
+            "var viewDisplayName = '${3:Custom View}';",
+            "var fetchXml = \"<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'>\" +",
+            "\t\"<entity name='account'>\" +",
+            "\t\t\"<attribute name='name' />\" +",
+            "\t\t\"<attribute name='accountid' />\" +",
+            "\t\t\"<filter type='and'>\" +",
+            "\t\t\t\"<condition attribute='address1_city' operator='eq' value='Redmond' />\" +",
+            "\t\t\"</filter>\" +",
+            "\t\"</entity>\" +",
+            "\"</fetch>\";",
+            "",
+            "var layoutXml = \"<grid name='resultset' object='1' jump='accountid' select='1' icon='1' preview='1'>\" +",
+            "\t\"<row name='result' id='accountid'>\" +",
+            "\t\t\"<cell name='name' width='150' />\" +",
+            "\t\"</row>\" +",
+            "\"</grid>\";",
+            "var isDefault = ${4|true,false|};",
+            "",
+            "Xrm.Page.getControl('${5:fieldname}').addCustomView(viewId, entityName, viewDisplayName, fetchXml, layoutXml, isDefault);"
+        ]
+    },
+    "Control Add Notification": {
+        "prefix": "FormContextControlAddNotification",
+        "description": "Displays an error or recommendation notification for a control, and lets you specify actions to execute based on the notification. When you specify an error type of notification, a red \"X\" icon appears next to the control. When you specify a recommendation type of notification, an \"i\" icon appears next to the control. On Dynamics 365 for Customer Engagement apps mobile clients, tapping on the icon will display the message, and let you perform the configured action by clicking the Apply button or dismiss the message.",
+        "body": [
+            "var actionCollection = {",
+            "\tmessage: '${1:Notification body message}',",
+            "\tactions: null",
+            "};",
+            "",
+            "actionCollection.actions = [function() {",
+            "\t$0",
+            "}];",
+            "",        
+            "formContext.getControl('${2:fieldName}').addNotification({",
+            "\tmessages: ['${3:Notification title}'],",
+            "\tnotificationLevel: '${4|RECOMMENDATION,ERROR|}',",
+            "\tuniqueId: '${5:notification_unique_id}',",
+            "\tactions: [actionCollection]",
+            "});"
+        ]
+    },
+    "Control Add On Post Search": {
+        "prefix": "FormContextControlAddOnPostSearch",
+        "description": "Adds an event handler to the PostSearch event.",
+        "body": "formContext.getControl('${1:fieldName}').addOnPostSearch(${2:myFunction});"
+    },
+    "Control Add On Result Opened": {
+        "prefix": "FormContextControlAddOnResultOpened",
+        "description": "Adds an event handler to the OnResultOpened event.",
+        "body": "formContext.getControl('${1:fieldName}').addOnResultOpened(${2:myFunction});"
+    },
+    "Control Add On Selection": {
+        "prefix": "FormContextControlAddOnSelection",
+        "description": "Adds an event handler to the OnSelection event.",
+        "body": "formContext.getControl('${1:fieldName}').addOnSelection(${2:myFunction});"
+    },
+    "Control Add Option": {
+        "prefix": "FormContextControlAddOption",
+        "description": "Adds an option to a control.",
+        "body": [
+            "var option = {",
+            "\ttext: '${1:my option}',",
+            "\tvalue: ${2:690970000}",
+            "};",
+            "",
+            "formContext.getControl('${3:fieldName}').addOption(option, ${4:index});"
+        ]
+    },
+    "Control Add Pre Search": {
+        "prefix": "FormContextControlAddPreSearch",
+        "description": "Applies changes to lookups based on values current just as the user is about to view results for the lookup.",
+        "body": "formContext.getControl('${1:fieldName}').addPreSearch(${2:myFunction});"
+    },
+    "Control Clear Notification": {
+        "prefix": "FormContextControlClearNotification",
+        "description": "Remove a message already displayed for a control.",
+        "body": "formContext.getControl('${1:fieldName}').clearNotification('${notification_unique_id}');"
+    },
+    "Control Clear Options": {
+        "prefix": "FormContextControlClearOptions",
+        "description": "Clears all options from a control.",
+        "body": "formContext.getControl('${1:fieldName}').clearOptions();"
+    },
+    "Control Get Attribute": {
+        "prefix": "FormContextControlGetAttribute",
+        "description": "Returns the attribute that the control is bound to.",
+        "body": "formContext.getControl('${1:fieldName}').getAttribute();"
+    },
+    "Get Control": {
+        "prefix": "FormContextGetControl",
+        "description": "Gets a control on the form.",
+        "body": "formContext.getControl('${1:fieldName}');"
+    },
+    "Control Get Control Type": {
+        "prefix": "FormContextControlGetControlType",
+        "description": "Returns a value that categorizes Control.",
+        "body": "formContext.getControl('${1:fieldName}').getControlType();"
+    },
+    "Control Get Data": {
+        "prefix": "FormContextControlGetData",
+        "description": "Returns the value of the data query string parameter passed to a Silverlight web resource.",
+        "body": "formContext.getControl('${1:fieldName}').getData();"
+    },
+    "Control Get Default View": {
+        "prefix": "FormContextControlGetDefaultView",
+        "description": "Returns the ID value of the default lookup dialog view.",
+        "body": "formContext.getControl('${1:fieldName}').getDefaultView();"
+    },
+    "Control Get Disabled": {
+        "prefix": "FormContextControlGetDisabled",
+        "description": "Returns whether the control is disabled.",
+        "body": "formContext.getControl('${1:fieldName}').getDisabled();"
+    },
+    "Control Get Entity Types": {
+        "prefix": "FormContextControlGetEntityTypes",
+        "description": "Gets the types of entities allowed in the lookup control.",
+        "body": "formContext.getControl('${1:fieldName}').getEntityTypes();"
+    },
+    "Control Get Initial Url": {
+        "prefix": "FormContextControlGetInitialUrl",
+        "description": "Returns the default URL that an IFRAME control is configured to display.",
+        "body": "formContext.getControl('${1:fieldName}').getInitialUrl();"
+    },
+    "Control Get Label": {
+        "prefix": "FormContextControlGetLabel",
+        "description": "Returns the label for the control.",
+        "body": "formContext.getControl('${1:fieldName}').getLabel();"
+    },
+    "Control Get Name": {
+        "prefix": "FormContextControlGetName",
+        "description": "Returns the name assigned to the control.",
+        "body": "formContext.getControl('${1:fieldName}').getName();"
+    },
+    "Control Get Object": {
+        "prefix": "FormContextControlGetObject",
+        "description": "Returns the object in the form that represents an IFRAME or web resource.",
+        "body": "formContext.getControl('${1:fieldName}').getObject();"
+    },
+    "Control Get Parent": {
+        "prefix": "FormContextControlGetParent",
+        "description": "Returns a reference to the section object that contains the control.",
+        "body": "formContext.getControl('${1:fieldName}').getParent();"
+    },
+    "Control Get Search Query": {
+        "prefix": "FormContextControlGetSearchQuery",
+        "description": "Gets the text used as the search criteria for the knowledge base management control.",
+        "body": "formContext.getControl('${1:fieldName}').getSearchQuery();"
+    },
+    "Control Get Show Time": {
+        "prefix": "FormContextControlGetShowTime",
+        "description": "Get whether a date control shows the time portion of the date.",
+        "body": "formContext.getControl('${1:fieldName}').getShowTime();"
+    },
+    "Control Get Src": {
+        "prefix": "FormContextControlGetSrc",
+        "description": "Returns the current URL being displayed in an IFRAME or web resource.",
+        "body": "formContext.getControl('${1:fieldName}').getSrc();"
+    },
+    "Control Get State": {
+        "prefix": "FormContextControlGetState",
+        "description": "Returns the state of the timer control.",
+        "body": "formContext.getControl('${1:fieldName}').getState();"
+    },
+    "Control Get Total Result Count": {
+        "prefix": "FormContextControlGetTotalResultCount",
+        "description": "Gets the count of results found in the search control.",
+        "body": "formContext.getControl('${1:fieldName}').getTotalResultCount();"
+    },
+    "Control Get Value": {
+        "prefix": "FormContextControlGetValue",
+        "description": "Gets the latest value in a control as the user types characters in a specific text or number field. This method helps you to build interactive experiences by validating data and alerting users as they type characters in a control.",
+        "body": "formContext.getControl('${1:fieldName}').getValue();"
+    },
+    "Control Get Visible": {
+        "prefix": "FormContextControlGetVisible",
+        "description": "Returns a value that indicates whether the control is currently visible.",
+        "body": "formContext.getControl('${1:fieldName}').getVisible();"
+    },
+    "Control Open Search Result": {
+        "prefix": "FormContextControlOpenSearchResult",
+        "description": "Opens a search result in the search control by specifying the result number.",
+        "body": "formContext.getControl('${1:fieldName}').openSearchResult(${2:resultNumber}, '${3|Inline,Popout|}');"
+    },
+    "Control Refresh": {
+        "prefix": "FormContextControlRefresh",
+        "description": "Refreshes the data displayed in a timelinewall and timer control.",
+        "body": "formContext.getControl('${1:fieldName}').refresh();"
+    },
+    "Control Remove On Post Search": {
+        "prefix": "FormContextControlRemoveOnPostSearch",
+        "description": "Removes an event handler from the PostSearch event.",
+        "body": "formContext.getControl('${1:fieldName}').removeOnPostSearch(${2:myFunction});"
+    },
+    "Control Remove On Result Opened": {
+        "prefix": "FormContextControlRemoveOnResultOpened",
+        "description": "Removes an event handler from the OnResultOpened event.",
+        "body": "formContext.getControl('${1:fieldName}').removeOnResultOpened(${2:myFunction});"
+    },
+    "Control Remove On Selection": {
+        "prefix": "FormContextControlRemoveOnSelection",
+        "description": "Removes an event handler from the OnSelection event.",
+        "body": "formContext.getControl('${1:fieldName}').removeOnSelection(${2:myFunction});"
+    },
+    "Control Remove Option": {
+        "prefix": "FormContextControlRemoveOption",
+        "description": "Removes an option from a control.",
+        "body": "formContext.getControl('${1:fieldName}').removeOption(${2:value});"
+    },
+    "Control Remove Pre Search": {
+        "prefix": "FormContextControlRemovePreSearch",
+        "description": "Removes event handler functions that have previously been set for the PreSearch event.",
+        "body": "formContext.getControl('${1:fieldName}').removePreSearch(${2:myFunction});"
+    },
+    "Control Set Data": {
+        "prefix": "FormContextControlSetData",
+        "description": "Sets the value of the data query string parameter passed to a Silverlight web resource.",
+        "body": "formContext.getControl('${1:fieldName}').setData('${2:string}');"
+    },
+    "Control Set Default View": {
+        "prefix": "FormContextControlSetDefaultView",
+        "description": "Removes event handler functions that have previously been set for the PreSearch event.",
+        "body": "formContext.getControl('${1:fieldName}').setDefaultView('${{2:00000000-0000-0000-00AA-000000000001}}');"
+    },
+    "Control Set Disabled": {
+        "prefix": "FormContextControlSetDisabled",
+        "description": "Sets whether the control is disabled.",
+        "body": "formContext.getControl('${1:fieldName}').setDisabled(${2|true,false|});"
+    },
+    "Control Set Entity Types": {
+        "prefix": "FormContextControlSetEntityTypes",
+        "description": "Sets the types of entities allowed in the lookup control.",
+        "body": "formContext.getControl('${1:fieldName}').setEntityTypes(['${2:account}']);"
+    },
+    "Control Set Focus": {
+        "prefix": "FormContextControlSetFocus",
+        "description": "Sets the focus on the control.",
+        "body": "formContext.getControl('${1:fieldName}').setFocus();"
+    },
+    "Control Set Label": {
+        "prefix": "FormContextControlSetLabel",
+        "description": "Sets the label of the control.",
+        "body": "formContext.getControl('${1:fieldName}').setLabel('${2:label}');"
+    },
+    "Control Set Notification": {
+        "prefix": "FormContextControlSetNotification",
+        "description": "Displays an error message for the control to indicate that data isn’t valid. When this method is used,  a red \"X\" icon appears next to the control. On Dynamics 365 for Customer Engagement apps mobile clients, tapping on the icon will display the message.",
+        "body": "formContext.getControl('${1:fieldName}').setNotification('${2:message}', '${3:notification_unique_id}');"
+    },
+    "Control Set Search Query": {
+        "prefix": "FormContextControlSetSearchQuery",
+        "description": "Sets the text used as the search criteria for the knowledge base search control.",
+        "body": "formContext.getControl('${1:fieldName}').setSearchQuery('${2:searchString}');"
+    },
+    "Control Set Show Time": {
+        "prefix": "FormContextControlSetShowTime",
+        "description": "Specify whether a date control should show the time portion of the date.",
+        "body": "formContext.getControl('${1:fieldName}').setShowTime(${2|true,false|});"
+    },
+    "Control Set Src": {
+        "prefix": "FormContextControlSetSrc",
+        "description": "Sets the URL to be displayed in an IFRAME or web resource.",
+        "body": "formContext.getControl('${1:fieldName}').setSrc('${2:url}');"
+    },
+    "Control Set Visible": {
+        "prefix": "FormContextControlSetVisible",
+        "description": "Sets a value that indicates whether the control is visible.",
+        "body": "formContext.getControl('${1:fieldName}').setVisible(${2|true,false|});"
+    },
+        "Get Depth": {
+        "prefix": "ExecutionContextGetDepth",
+        "description": "Returns a value that indicates the order in which this handler is executed.",
+        "body": "executionContext.getDepth();"
+    },
+    "Get Event Arguments": {
+        "prefix": "ExecutionContextGetEventArgs",
+        "description": "Returns an object with methods to manage the Save event.",
+        "body": "executionContext.getEventArgs();"
+    },
+    "Get Event Source": {
+        "prefix": "ExecutionContextGetEventSource",
+        "description": "Returns a reference to the object that the event occurred on.",
+        "body": "executionContext.getEventSource();"
+    },
+    "Get Form Context": {
+        "prefix": "ExecutionContextGetFormContext",
+        "description": "Returns a reference to the form or an item on the form depending on where the method was called.",
+        "body": "executionContext.getFormContext();"
+    },
+    "Get Shared Variable": {
+        "prefix": "ExecutionContextGetSharedVariable",
+        "description": "Retrieves a variable set using the setSharedVariable method.",
+        "body": "executionContext.getSharedVariable(${1:key});"
+    },
+    "Set Shared Variable": {
+        "prefix": "ExecutionContextSetSharedVariable",
+        "description": "Sets the value of a variable to be used by a handler after the current handler completes.",
+        "body": "executionContext.setSharedVariable(${1:key}, ${2:value});"
+    },
+    "Get Save Mode": {
+        "prefix": "ExecutionContextGetSaveMode",
+        "description": "Returns a value indicating how the save event was initiated by the user.",
+        "body": "executionContext.getEventArgs().getSaveMode();"
+    },
+    "Is Default Prevented": {
+        "prefix": "ExecutionContextIsDefaultPrevented",
+        "description": "Returns a value indicating whether the save event has been canceled because the preventDefault method was used in this event handler or a previous event handler.",
+        "body": "executionContext.getEventArgs().isDefaultPrevented();"
+    },
+    "Prevent Default": {
+        "prefix": "ExecutionContextPreventDefault",
+        "description": "Cancels the save operation, but all remaining handlers for the event will still be executed.",
+        "body": "executionContext.getEventArgs().preventDefault();"
+    },
+        "Data Add On Load": {
+        "prefix": "FormContextDataAddOnLoad",
+        "description": "Adds a function to be called when form data is loaded.",
+        "body": "formContext.data.addOnLoad(${1:myFunction});"
+    },
+    "Data Get Is Dirty": {
+        "prefix": "FormContextDataGetIsDirty",
+        "description": "Gets a boolean value indicating whether the form data has been modified.",
+        "body": "formContext.data.getIsDirty();"
+    },
+    "Data Get Is Valid": {
+        "prefix": "FormContextDataGetIsValid",
+        "description": "Gets a boolean value indicating whether all of the form data is valid. This includes the main entity and any unbound attributes.",
+        "body": "formContext.data.getIsValid();"
+    },
+    "Data Refresh": {
+        "prefix": "FormContextDataRefresh",
+        "description": "Asynchronously refreshes and optionally saves all the data of the form without reloading the page.",
+        "body": [
+            "formContext.data.refresh(${1|true,false|}).then(",
+            "\tfunction success() {",
+            "\t\t// perform operations on refresh",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Data Remove On Load": {
+        "prefix": "FormContextDataRemoveOnLoad",
+        "description": "Removes a function to be called when form data is loaded.",
+        "body": "formContext.data.removeOnLoad(${1:myFunction});"
+    },
+    "Data Save": {
+        "prefix": "FormContextDataSave",
+        "description": "Gets a boolean value indicating whether the form data has been modified.",
+        "body": [
+            "var saveOptions = {",
+            "\tsaveMode: ${1:1},",
+            "\tuseSchedulingEngine: ${2|true,false|}",
+            "};",
+            "",
+            "formContext.data.save(saveOptions).then(",
+            "\tfunction success() {",
+            "\t\t// perform operations on refresh",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Data Entity Add On Save": {
+        "prefix": "FormContextDataEntityAddOnSave",
+        "description": "Adds a function to be called when the record is saved.",
+        "body": "formContext.data.entity.addOnSave(${1:myFunction});"
+    },
+    "Data Entity Get Data Xml": {
+        "prefix": "FormContextDataEntityGetDataXml",
+        "description": "Returns a string representing the XML that will be sent to the server when the record is saved. Only data in fields that have changed are set to the server.",
+        "body": "formContext.data.entity.getDataXml();"
+    },
+    "Data Entity Get Entity Name": {
+        "prefix": "FormContextDataEntityGetEntityName",
+        "description": "Returns a string representing the logical name of the entity for the record.",
+        "body": "formContext.data.entity.getEntityName();"
+    },
+    "Data Entity Get Entity Reference": {
+        "prefix": "FormContextDataEntityGetEntityReference",
+        "description": "Returns a lookup value that references the record.",
+        "body": "formContext.data.entity.getEntityReference();"
+    },
+    "Data Entity Get Id": {
+        "prefix": "FormContextDataEntityGetId",
+        "description": "Returns a string representing the GUID value for the record.",
+        "body": "formContext.data.entity.getId();"
+    },
+    "Data Entity Get Is Dirty": {
+        "prefix": "FormContextDataEntityGetIsDirty",
+        "description": "Gets a boolean value indicating whether any fields in the form have been modified.",
+        "body": "formContext.data.entity.getIsDirty();"
+    },
+    "Data Entity Get Primary Attribute Value": {
+        "prefix": "FormContextDataEntityGetPrimaryAttributeValue",
+        "description": "Gets a string for the value of the primary attribute of the entity.",
+        "body": "formContext.data.entity.getPrimaryAttributeValue();"
+    },
+    "Data Entity Is Valid": {
+        "prefix": "FormContextDataEntityIsValid",
+        "description": "Gets a boolean value indicating whether all of the entity data is valid.",
+        "body": "formContext.data.entity.isValid();"
+    },
+    "Data Entity Remove On Save": {
+        "prefix": "FormContextDataEntityRemoveOnSave",
+        "description": "Removes a function to be called when form data is loaded.",
+        "body": "formContext.data.entity.removeOnSave(${1:myFunction});"
+    },
+    "Data Entity Save": {
+        "prefix": "FormContextDataEntitySave",
+        "description": "Saves the record synchronously with the options to close the form or open a new form after the save is completed.",
+        "body": "formContext.data.entity.save('${1|saveandclose,saveandnew|}');"
+    },
+    "Data Process Add On Process Status Change": {
+        "prefix": "FormContextDataProcessddOnProcessStatusChange",
+        "description": "Adds a function as an event handler for the OnProcessStatusChange event so that it will be called when the business process flow status changes.",
+        "body": "formContext.data.process.addOnProcessStatusChange(${1:myFunction});"
+    },
+    "Data Process Add On Stage Change": {
+        "prefix": "FormContextDataProcessAddOnStageChange",
+        "description": "Adds a function as an event handler for the OnStageChange event so that it will be called when the business process flow stage changes.",
+        "body": "formContext.data.process.addOnStageChange(${1:myFunction});"
+    },
+    "Data Process Add On Stage Selected": {
+        "prefix": "FormContextDataProcessAddOnStageSelected",
+        "description": "Adds a function as an event handler for the OnStageSelected event so that it will be called when a business process flow stage is selected.",
+        "body": "formContext.data.process.addOnStageSelected(${1:myFunction});"
+    },
+    "Data Process Remove On Process Status Change": {
+        "prefix": "FormContextDataProcessRemoveOnProcessStatusChange",
+        "description": "Removes an event handler from the OnProcessStatusChange event.",
+        "body": "formContext.data.process.removeOnProcessStatusChange(${1:myFunction});"
+    },
+    "Data Process Remove On Stage Change": {
+        "prefix": "FormContextDataProcessRemoveOnStageChange",
+        "description": "Removes an event handler from the OnStageChange event.",
+        "body": "formContext.data.process.removeOnStageChange(${1:myFunction});"
+    },
+    "Data Process Remove On Stage Selected": {
+        "prefix": "FormContextDataProcessRemoveOnStageSelected",
+        "description": "Removes an event handler from the OnStageSelected event.",
+        "body": "formContext.data.process.removeOnStageSelected(${1:myFunction});"
+    },
+    "Data Process Get Active Process": {
+        "prefix": "FormContextDataProcessGetActiveProcess",
+        "description": "Returns a Process object representing the active process.",
+        "body": "formContext.data.process.getActiveProcess();"
+    },
+    "Data Process Set Active Process": {
+        "prefix": "FormContextDataProcessSetActiveProcess",
+        "description": "Sets a Process as the active process.",
+        "body": "formContext.data.process.setActiveProcess('${1:process_unique_id}', ${2:callbackFunction});"
+    },
+    "Data Process Get Enabled Processes": {
+        "prefix": "FormContextDataProcessGetEnabledProcesses",
+        "description": "Asynchronously retrieves the business process flows enabled for an entity that the current user can switch to.",
+        "body": "formContext.data.process.getEnabledProcesses(${1:callbackFunction}(enabledProcesses));"
+    },
+    "Data Process Get Process Instances": {
+        "prefix": "FormContextDataProcessGetProcessInstances",
+        "description": "Returns all the process instances for the entity record that the calling user has access to.",
+        "body": "formContext.data.process.getProcessInstances(${1:callbackFunction}(object));"
+    },
+    "Data Process Set Active Process Instance": {
+        "prefix": "FormContextDataProcessSetActiveProcessInstance",
+        "description": "Sets a process instance as the active instance.",
+        "body": "formContext.data.process.setActiveProcessInstance(${1:processInstanceId}, ${2:callbackFunction});"
+    },
+    "Data Process Get Instance Id": {
+        "prefix": "FormContextDataProcessGetInstanceId",
+        "description": "Returns the unique identifier of the process instance.",
+        "body": "formContext.data.process.getInstanceId();"
+    },
+    "Data Process Get Instance Name": {
+        "prefix": "FormContextDataProcessGetInstanceName",
+        "description": "Returns the name of the process instance.",
+        "body": "formContext.data.process.getInstanceName();"
+    },
+    "Data Process Get Status": {
+        "prefix": "FormContextDataProcessGetStatus",
+        "description": "Returns the current status of the process instance.",
+        "body": "formContext.data.process.getStatus();"
+    },
+    "Data Process Set Status": {
+        "prefix": "FormContextDataProcessSetStatus",
+        "description": "Sets the current status of the active process instance.",
+        "body": "formContext.data.process.setStatus('${1|active,aborted,finished|}', ${2:callbackFunction});"
+    },
+    "Data Process Get Active Stage": {
+        "prefix": "FormContextDataProcessGetActiveStage",
+        "description": "Returns a Stage object representing the active stage.",
+        "body": "formContext.data.process.getActiveStage();"
+    },
+    "Data Process Set Active Stage": {
+        "prefix": "FormContextDataProcessSetActiveStage",
+        "description": "Sets a completed stage as the active stage.",
+        "body": "formContext.data.process.setActiveStage(${1:stageId}, ${2:callbackFunction});"
+    },
+    "Data Process Get Active Path": {
+        "prefix": "FormContextDataProcessGetActivePath",
+        "description": "Gets a collection of stages currently in the active path with methods to interact with the stages displayed in the business process flow control.",
+        "body": "formContext.data.process.getActivePath();"
+    },
+    "Data Process Get Selected Stage": {
+        "prefix": "FormContextDataProcessGetSelectedStage",
+        "description": "Gets the currently selected stage.",
+        "body": "formContext.data.process.getSelectedStage();"
+    },
+    "Data Process Move Next": {
+        "prefix": "FormContextDataProcessMoveNext",
+        "description": "Progresses to the next stage.",
+        "body": "formContext.data.process.moveNext(${1:callbackFunction});"
+    },
+    "Data Process Move Previous": {
+        "prefix": "FormContextDataProcessMovePrevious",
+        "description": "Moves to the previous stage.",
+        "body": "formContext.data.process.movePrevious(${1:callbackFunction});"
+    },
+    "Add On Load": {
+        "prefix": "FormContextUiAddOnLoad",
+        "description": "Adds a function to be called on the form OnLoad event.",
+        "body": "formContext.ui.addOnLoad(${1:myFunction});"
+    },
+    "Clear Form Notification": {
+        "prefix": "FormContextUiClearFormNotification",
+        "description": "Removes form level notifications.",
+        "body": "formContext.ui.clearFormNotification('${1:notification_unique_id}');"
+    },
+    "Close": {
+        "prefix": "FormContextUiClose",
+        "description": "Closes the form.",
+        "body": "formContext.ui.close();"
+    },
+    "Get Form Type": {
+        "prefix": "FormContextUiGetFormType",
+        "description": "Gets the form type for the record.",
+        "body": "formContext.ui.getFormType();"
+    },
+    "Get View Port Height": {
+        "prefix": "FormContextUiGetViewPortHeight",
+        "description": "Gets the height of the viewport in pixels.",
+        "body": "formContext.ui.getViewPortHeight();"
+    },
+    "Get View Port Width": {
+        "prefix": "FormContextUiGetViewPortWidth",
+        "description": "Gets the width of the viewport in pixels.",
+        "body": "formContext.ui.getViewPortWidth();"
+    },
+    "Refresh Ribbon": {
+        "prefix": "FormContextUiRefreshRibbon",
+        "description": "Causes the ribbon to re-evaluate data that controls what is displayed in it.",
+        "body": "formContext.ui.refreshRibbon(${1|true,false|});"
+    },
+    "Remove On Load": {
+        "prefix": "FormContextUiRemoveOnLoad",
+        "description": "Removes a function from the form OnLoad event.",
+        "body": "formContext.ui.removeOnLoad(${1:myFunction});"
+    },
+    "Set Form Entity Name": {
+        "prefix": "FormContextUiSetFormEntityName",
+        "description": "Sets the name of the entity to be displayed on the form.",
+        "body": "formContext.ui.setFormEntityName('${1:entityName}');"
+    },
+    "Set Form Notification": {
+        "prefix": "FormContextUiSetFormNotification",
+        "description": "Displays form level notifications.",
+        "body": "formContext.ui.setFormNotification('${1:message}', '${2|ERROR,WARNING,INFO|}', '${3:notification_unique_id}');"
+    },
+    "Form Selector Get Item": {
+        "prefix": "FormContextUiFormSelectorItemsGet",
+        "description": "Returns reference to the form corresponding to the passed arguments",
+        "body": "formContext.ui.formSelector.items.get(${1:arg});"
+    },
+    "Form Selecter Get Current Item": {
+        "prefix": "FormContextUiFormSelectorGetCurrentItem",
+        "description": "Returns a reference to the form currently being shown. When only one form is available this method will return null.",
+        "body": "formContext.ui.formSelector.getCurrentItem();" 
+    },
+    "Process Get Display State": {
+        "prefix": "FormContextUiProcessGetDisplayState",
+        "description": "Retrieves the display state for the business process control.",
+        "body": "formContext.ui.process.getDisplayState();" 
+    },
+    "Process Get Visible": {
+        "prefix": "FormContextUiProcessGetVisible",
+        "description": "Returns a value indicating whether the business process control is visible.",
+        "body": "formContext.ui.process.getVisible();" 
+    },
+    "Process Reflow": {
+        "prefix": "FormContextUiProcessReflow",
+        "description": "Reflows the UI of the business process control.",
+        "body": "formContext.ui.process.reflow(${1|true,false|}, '${2:parent_stage_id}', '${3:next_stage_id}');" 
+    },
+    "Process Set Display State": {
+        "prefix": "FormContextUiProcessSetDisplayState",
+        "description": "Sets the display state of the business process control.",
+        "body": "formContext.ui.process.setDisplayState('${1|expanded,collapsed,floating|}');" 
+    },
+    "Process Set Visible": {
+        "prefix": "FormContextUiProcessSetVisible",
+        "description": "Shows or hides the business process control.",
+        "body": "formContext.ui.process.setVisible(${1|true,false|});" 
+    },
+    "Quick Forms Get Item": {
+        "prefix": "FormContextUiQuickFormsGet",
+        "description": "retrieve a quick view control in the quickForms collection by using the get method by specifying either the index value (integer) or name (string) of the quick view control as the argument:",
+        "body": "formContext.ui.quickForms.get(${1:arg})"
+    },
+    "Tabs Get Item": {
+        "prefix": "FormContextUiTabsGet",
+        "description": "retrieve a tab control in the tabs collection by using the get method by specifying either the index value (integer) or name (string) of the quick view control as the argument:",
+        "body": "formContext.ui.tabs.get(${1:arg})"
+    },
+    "Get Id": {
+        "prefix": "FormItemGetId",
+        "description": "Returns the ID of the form.",
+        "body": "formItem.getId();"
+    },
+    "Get Label": {
+        "prefix": "FormItemGetLabel",
+        "description": "Returns the label of the form.",
+        "body": "formItem.getLabel();"
+    },
+    "Navigate": {
+        "prefix": "FormItemNavigate",
+        "description": "Opens the specified form.",
+        "body": "formItem.navigate();"
+    },
+    "Add On Load": {
+        "prefix": "GridContextAddOnLoad",
+        "description": "Adds event handlers to the Subgrid OnLoad event event.",
+        "body": "gridContext.addOnLoad(${1:myFunction});"
+    },
+    "Get Entity Name": {
+        "prefix": "GridContextGetEntityName",
+        "description": "Gets the logical name of the entity data displayed in the grid.",
+        "body": "gridContext.getEntityName();"
+    },
+    "Get Fetch Xml": {
+        "prefix": "GridContextGetFetchXml",
+        "description": "Gets the FetchXML query that represents the current data, including filtered and sorted data, in the grid control.",
+        "body": "gridContext.getFetchXml();"
+    },
+    "Get Grid": {
+        "prefix": "GridContextGetGrid",
+        "description": "Get access to the Grid available in the GridControl (gridContext).",
+        "body": "gridContext.getGrid();"
+    },
+    "Get Grid Get Rows": {
+        "prefix": "GridContextGetGridGetRows",
+        "description": "Returns a collection of every GridRow in the Grid.",
+        "body": "gridContext.getGrid().getRows();"
+    },
+    "Get Grid Get Rows Get": {
+        "prefix": "GridContextGetGridGetRowsGet",
+        "description": "Returns a GridRow object from the collection of GridRows",
+        "body": "gridContext.getGrid().getRows().get(${1:args});"
+    },
+    "Get Grid Get Selected Rows": {
+        "prefix": "GridContextGetGridGetSelectedRows",
+        "description": "Returns a collection of every selected GridRow in the Grid.",
+        "body": "gridContext.getGrid().getSelectedRows();"
+    },
+    "Get Grid Get Total Record Count": {
+        "prefix": "GridContextGetGridGetTotalRecordCount",
+        "description": "Returns the total number of records that match the filter criteria of the view, not limited by the number visible in a single page.",
+        "body": "gridContext.getGrid().getTotalRecordCount();"
+    },
+    "Get Grid Type": {
+        "prefix": "GridContextGetGridType",
+        "description": "Gets the grid type (grid or subgrid).",
+        "body": "gridContext.getGridType();"
+    },
+    "Get Relationship": {
+        "prefix": "GridContextGetRelationship",
+        "description": "Gets information about the relationship used to filter the subgrid.",
+        "body": "gridContext.getRelationship();"
+    },
+    "Get Url": {
+        "prefix": "GridContextGetUrl",
+        "description": "Gets the URL of the current grid control.",
+        "body": "gridContext.getUrl(${1|0,1|});"
+    },
+    "Get View Selector": {
+        "prefix": "GridContextGetViewSelector",
+        "description": "Use this method to access the ViewSelector methods available for the grid control.",
+        "body": "gridContext.getViewSelector();"
+    },
+    "Get View Selector Get Current View": {
+        "prefix": "GridContextGetViewSelectorGetCurrentView",
+        "description": "Gets a reference to the current view.",
+        "body": "gridContext.getViewSelector().getCurrentView();"
+    },
+    "Get View Selector Is Visible": {
+        "prefix": "GridContextGetViewSelectorIsVisible",
+        "description": "Returns a boolean value to indicate whether the view selector is visible.",
+        "body": "gridContext.getViewSelector().isVisible();"
+    },
+    "Get View Selector Set Current View": {
+        "prefix": "GridContextGetViewSelectorSetCurrentView",
+        "description": "Sets the current view.",
+        "body": [
+            "var object = {",
+            "\tentityType = ${1:entityType},",
+            "\tid = ${2:id},",
+            "\tname = '${3:viewName}'",
+            "};",
+            "",
+            "gridContext.getViewSelector().setCurrentView(object);"
+        ]
+    },
+    "Open Related Grid": {
+        "prefix": "GridContextOpenRelatedGrid",
+        "description": "Displays the associated grid for the grid.",
+        "body": "gridContext.openRelatedGrid();"
+    },
+    "Refresh": {
+        "prefix": "GridContextRefresh",
+        "description": "Refreshes the grid.",
+        "body": "gridContext.refresh();"
+    },
+    "Refresh Ribbon": {
+        "prefix": "GridContextRefreshRibbon",
+        "description": "Refreshes the ribbon rules for the grid control.",
+        "body": "gridContext.refreshRibbon();"
+    },
+    "Remove On Load": {
+        "prefix": "GridContextRemoveOnLoad",
+        "description": "Removes event handlers from the Subgrid OnLoad event event.",
+        "body": "gridContext.removeOnLoad(${1:myFunction});"
+    },
+        "Get Data": {
+        "prefix": "GridRowData",
+        "description": "Returns the GridRowData for the GridRow.",
+        "body": "gridRow.data;"
+    },
+    "Get Data Get Entity": {
+        "prefix": "GridRowDataEntity",
+        "description": "Returns the GridEntity for the GridRowData.",
+        "body": "gridRow.data.entity;"
+    },
+    "Get Entity Name": {
+        "prefix": "GridRowDataEntityGetEntityName",
+        "description": "Returns the logical name for the record in the row.",
+        "body": "gridRow.data.entity.getEntityName();"
+    },
+    "Get Entity Reference": {
+        "prefix": "GridRowDataEntityGetEntityReference",
+        "description": "Returns a Lookup value that references the record in the row.",
+        "body": "gridRow.data.entity.getEntityReference();"
+    },
+    "Get Id": {
+        "prefix": "GridRowDataEntityGetId",
+        "description": "Returns the Id for the record in the row.",
+        "body": "gridRow.data.entity.getId();"
+    },
+    "Get Primary Attribute Value": {
+        "prefix": "GridRowDataEntityGetPrimaryAttributeValue",
+        "description": "Returns the primary attribute value for the record in the row.",
+        "body": "gridRow.data.entity.getPrimaryAttributeValue();"
+    },
+        "Get Id": {
+        "prefix": "NavigationItemGetId",
+        "description": "Returns the name of the item.",
+        "body": "navigationItem.getId();"
+    },
+    "Get Label": {
+        "prefix": "NavigationItemGetLabel",
+        "description": "Returns the label of the item.",
+        "body": "navigationItem.getLabel();"
+    },
+    "Get Visible": {
+        "prefix": "NavigationItemGetVisible",
+        "description": "Returns a value that indicates whether the item is currently visible.",
+        "body": "navigationItem.getVisible();"
+    },
+    "Set Focus": {
+        "prefix": "NavigationItemSetFocus",
+        "description": "Sets the focus on the item.",
+        "body": "navigationItem.setFocus();"
+    },
+    "Set Label": {
+        "prefix": "NavigationItemSetLabel",
+        "description": "Sets the label for the item.",
+        "body": "navigationItem.setLabel('${1:label}');"
+    },
+    "Set Visible": {
+        "prefix": "NavigationItemSetVisible",
+        "description": "Sets a value that indicates whether the item is visible.",
+        "body": "navigationItem.setVisible(${1|true,false|});"
+    },
+        "Get Id": {
+        "prefix": "ProcObjGetId",
+        "description": "Returns the unique identifier of the process.",
+        "body": "procObj.getId();"
+    },
+    "Get Name": {
+        "prefix": "ProcObjGetName",
+        "description": "Returns the name of the process.",
+        "body": "procObj.getName();"
+    },
+    "Get Stages": {
+        "prefix": "ProcObjGetStages",
+        "description": "Returns a collection of stages in the process.",
+        "body": "procObj.getStages();"
+    },
+    "Is Rendered": {
+        "prefix": "ProcObjIsRendered",
+        "description": "Returns a boolean value indicating whether the process is rendered.",
+        "body": "procObj.isRendered();"
+    },
+    "Get Control": {
+        "prefix": "QuickViewControlGetControl",
+        "description": "Gets the control on a form.",
+        "body": "quickViewControl.getControl('${1:fieldname}');"
+    },
+    "Get Control Type": {
+        "prefix": "QuickViewControlGetControlType",
+        "description": "Returns a string value that categorizes quick view controls.",
+        "body": "quickViewControl.getControlType();"
+    },
+    "Get Disabled": {
+        "prefix": "QuickViewControlGetDisabled",
+        "description": "Gets a boolean value indicating whether the control is disabled.",
+        "body": "quickViewControl.getDisabled();"
+    },
+    "Get Label": {
+        "prefix": "QuickViewControlGetLabel",
+        "description": "Returns the label for the quick view control.",
+        "body": "quickViewControl.getLabel();"
+    },
+    "Get Name": {
+        "prefix": "QuickViewControlGetName",
+        "description": "Returns the name assigned to the quick view control.",
+        "body": "quickViewControl.getName();"
+    },
+    "Get Parent": {
+        "prefix": "QuickViewControlGetParent",
+        "description": "Returns a reference to the section object that contains the control.",
+        "body": "quickViewControl.getParent();"
+    },
+    "Get Visible": {
+        "prefix": "QuickViewControlGetVisible",
+        "description": "Returns a value that indicates whether the quick view control is currently visible.",
+        "body": "quickViewControl.getVisible();"
+    },
+    "Is Loaded": {
+        "prefix": "QuickViewControlIsLoaded",
+        "description": "Returns whether the data binding for the constituent controls in a quick view control is complete.",
+        "body": "quickViewControl.isLoaded();"
+    },
+    "Refresh": {
+        "prefix": "QuickViewControlRefresh",
+        "description": "Refreshes the data displayed in a quick view control.",
+        "body": "quickViewControl.refresh();"
+    },
+    "Set Disabled": {
+        "prefix": "QuickViewControlSetDisabled",
+        "description": "Sets the state of the control to either enabled or disabled.",
+        "body": "quickViewControl.setDisabled(${1|true,false|});"
+    },
+    "Set Focus": {
+        "prefix": "QuickViewControlSetFocus",
+        "description": "Sets focus on the control.",
+        "body": "quickViewControl.setFocus();"
+    },
+    "Set Label": {
+        "prefix": "QuickViewControlSetLabel",
+        "description": "Sets the label for the quick view control.",
+        "body": "quickViewControl.setLabel('${1:label}');"
+    },
+    "Set Visible": {
+        "prefix": "QuickViewControlSetVisible",
+        "description": "Displays or hides a control.",
+        "body": "quickViewControl.setVisible(${1|true,false|});"
+    },
+        "Get Label": {
+        "prefix": "SectionObjGetLabel",
+        "description": "Returns the label for the section.",
+        "body": "sectionObj.getLabel();"
+    },
+    "Get Name": {
+        "prefix": "SectionObjGetName",
+        "description": "Returns the name of the section.",
+        "body": "sectionObj.getName();"
+    },
+    "Get Parent": {
+        "prefix": "SectionObjGetParent",
+        "description": "Returns the tab containing the section.",
+        "body": "sectionObj.getParent();"
+    },
+    "Get Visible": {
+        "prefix": "SectionObjGetVisible",
+        "description": "Returns a value that indicates whether the section is currently visible.",
+        "body": "sectionObj.getVisible();"
+    },
+    "Set Label": {
+        "prefix": "SectionObjSetLabel",
+        "description": "Sets the label of the section.",
+        "body": "sectionObj.setLabel('${1:label}');"
+    },
+    "Set Visible": {
+        "prefix": "SectionObjSetVisible",
+        "description": "Sets a value that indicates whether the section is visible.",
+        "body": "sectionObj.setVisible(${1|true,false|});"
+    },
+    "Get Category": {
+        "prefix": "StageObjGetCategoryGetValue",
+        "description": "Returns an object with a getValue method which will return the integer value of the business process flow category.",
+        "body": "stageObj.getCategory().getValue();"
+    },
+    "Get Entity Name": {
+        "prefix": "StageObjGetEntityName",
+        "description": "Returns the logical name of the entity associated with the stage.",
+        "body": "stageObj.getEntityName();"
+    },
+    "Get Id": {
+        "prefix": "StageObjGetId",
+        "description": "Returns the unique identifier of the stage.",
+        "body": "stageObj.getId();"
+    },
+    "Get Name": {
+        "prefix": "StageObjGetName",
+        "description": "Returns the name of the stage.",
+        "body": "stageObj.getName();"
+    },
+    "Get Navigation Behavior": {
+        "prefix": "StageObjGetNavigationBehavior",
+        "description": "Returns a navigation behavior object for a stage that can be used to define whether the Create button is available for users to create other entity record in a cross-entity business process flow navigation scenario.",
+        "body": [
+            "stageObj.getNavigationBehavior().allowCreateNew = function() {",
+            "\treturn ${1|true,false|};",
+            "}"
+        ]
+    },
+    "Get Status": {
+        "prefix": "StageObjGetStatus",
+        "description": "Returns the status of the stage.",
+        "body": "stageObj.getStatus();"
+    },
+    "Get Steps": {
+        "prefix": "StageObjGetSteps",
+        "description": "Returns a collection of steps in the stage.",
+        "body": "stageObj.getSteps();"
+    },
+        "Get Attribute": {
+        "prefix": "StepObjGetAttribute",
+        "description": "Returns the logical name of the attribute associated to the step.",
+        "body": "stepObj.getAttribute();"
+    },
+    "Get Name": {
+        "prefix": "StepObjGetName",
+        "description": "Returns the name of the step.",
+        "body": "stepObj.getName();"
+    },
+    "Get Progress": {
+        "prefix": "StepObjGetProgress",
+        "description": "Returns the progress of the action step.",
+        "body": "stepObj.getProgress();"
+    },
+    "Is Required": {
+        "prefix": "StepObjIsRequired",
+        "description": "Returns a boolean value indicating whether the step is required in the business process flow.",
+        "body": "stepObj.isRequired();"
+    },
+    "Set Progress": {
+        "prefix": "StepObjSetProgress",
+        "description": "Updates the progress of the action step.",
+        "body": "stepObj.setProgress(${1|0,1,2,3,4|}, '${2:message}');"
+    },
+    "Add Tab State Change": {
+        "prefix": "TabObjAddTabStateChange",
+        "description": "Adds a function to be called when the TabStateChange event occurs.",
+        "body": "tabObj.addTabStateChange(${1:myFunction});"
+    },
+    "Get Display State": {
+        "prefix": "TabObjAddGetDisplayState",
+        "description": "Gets display state of the tab.",
+        "body": "tabObj.getDisplayState();"
+    },
+    "Get Label": {
+        "prefix": "TabObjGetLabel",
+        "description": "Returns the label for the tab.",
+        "body": "tabObj.getLabel();"
+    },
+    "Get Name": {
+        "prefix": "TabObjGetName",
+        "description": "Returns the name of the tab.",
+        "body": "tabObj.getName();"
+    },
+    "Get Parent": {
+        "prefix": "TabObjGetParent",
+        "description": "Returns the formContext.ui object containing the tab.",
+        "body": "tabObj.getParent();"
+    },
+    "Get Visible": {
+        "prefix": "TabObjGetVisible",
+        "description": "Returns a value that indicates whether the tab is currently visible.",
+        "body": "tabObj.getVisible();"
+    },
+    "Remove Tab State Change": {
+        "prefix": "TabObjRemoveTabStateChange",
+        "description": "Removes a function to be called when the TabStateChange event occurs.",
+        "body": "tabObj.removeTabStateChange(${1:myFunction});"
+    },
+    "Set Display State": {
+        "prefix": "TabObjSetDisplayState",
+        "description": "Sets display state of the tab.",
+        "body": "tabObj.setDisplayState('${1|expanded,collapsed|}');"
+    },
+    "Set Focus": {
+        "prefix": "TabObjSetFocus",
+        "description": "Sets focus on the tab.",
+        "body": "tabObj.setFocus();"
+    },
+    "Set Label": {
+        "prefix": "TabObjSetLabel",
+        "description": "Sets the label of the tab.",
+        "body": "tabObj.setLabel('${1:label}');"
+    },
+    "Set Visible": {
+        "prefix": "TabObjSetVisible",
+        "description": "Sets a value that indicates whether the tab is visible.",
+        "body": "tabObj.setVisible(${1|true,false|});"
+    },
+    "Sections Get": {
+        "prefix": "TabObjSectionsGet",
+        "description": "retrieve a section control in the sections collection by using the get method by specifying either the index value (integer) or name (string) of the quick view control as the argument:",
+        "body": "tabObj.sections.get(${1:arg});"
+    },
+    "Capture Audio": {
+        "prefix": "XrmDeviceCaptureAudio",
+        "description": "Invokes the device microphone to record audio.",
+        "body": [
+            "Xrm.Device.captureAudio().then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations on the captured audio",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Capture Image": {
+        "prefix": "XrmDeviceCaptureImage",
+        "description": "Invokes the device camera to capture an image.",
+        "body": [
+            "var imageOptions = {",
+            "\tallowEdit: ${1|true,false|},",
+            "\theight: ${2:250},",
+            "\twidth: ${3:400},",
+            "\tpreferFrontCamera: ${4|true,false|},",
+            "\tquality: ${5:100}",
+            "};",
+            "",
+            "Xrm.Device.captureImage(imageOptions).then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations on the captured image",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Capture Video": {
+        "prefix": "XrmDeviceCaptureVideo",
+        "description": "Invokes the device camera to record video.",
+        "body": [
+            "Xrm.Device.captureVideo().then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations on the captured video",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Get Barcode Value": {
+        "prefix": "XrmDeviceGetBarcodeValue",
+        "description": "Invokes the device camera to scan the barcode information, such as a product number.",
+        "body": [
+            "Xrm.Device.getBarcodeValue().then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations on the barcode value",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Get Current Position": {
+        "prefix": "XrmDeviceGetCurrentPosition",
+        "description": "Returns the current location using the device geolocation capability.",
+        "body": [
+            "Xrm.Device.getCurrentPosition().then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations on the captured location",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Pick File": {
+        "prefix": "XrmDevicePickFile",
+        "description": "Opens a dialog box to select files from your computer (web client) or mobile device (mobile clients).",
+        "body": [
+            "var pickFileOptions = {",
+            "\taccept: '${1|audio,video,image|}',",
+            "\tallowMultipleFiles: ${2|true,false|},",
+            "\tmaximumAllowedFileSize: ${3:84},",
+            "};",
+            "",
+            "Xrm.Device.pickFile(pickFileOptions).then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations on selected files",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+        "Html Attribute Encode": {
+        "prefix": "XrmEncodingHtmlAttributeEncode",
+        "description": "Encodes the specified string so that it can be used in an HTML attribute.",
+        "body": "Xrm.Encoding.htmlAttributeEncode(${1:arg});"
+    },
+    "Html Decode": {
+        "prefix": "XrmEncodingHtmlDecode",
+        "description": "Converts a string that has been HTML-encoded into a decoded string.",
+        "body": "Xrm.Encoding.htmlDecode(${1:arg});"
+    },
+    "Html Encode": {
+        "prefix": "XrmEncodingHtmlEncode",
+        "description": "Converts a string to an HTML-encoded string.",
+        "body": "Xrm.Encoding.htmlEncode(${1:arg});"
+    },
+    "Xml Attribute Encode": {
+        "prefix": "XrmEncodingXmlAttributeEncode",
+        "description": "Encodes the specified string so that it can be used in an XML attribute.",
+        "body": "Xrm.Encoding.xmlAttributeEncode(${1:arg});"
+    },
+    "Xml Encode": {
+        "prefix": "XrmEncodingXmlEncode",
+        "description": "Converts a string to an XML-encoded string.",
+        "body": "Xrm.Encoding.xmlEncode(${1:arg});"
+    },
+    "Open Alert Dialog": {
+        "prefix": "XrmNavigationOpenAlertDialog",
+        "description": "Displays an alert dialog containing a message and a button.",
+        "body": [
+            "var alertStrings = { confirmButtonLabel: '${1:Yes}', text: '${2:This is an alert.}' };",
+            "var alertOptions = { height: ${3:120}, width: ${4:260} };",
+            "",
+            "Xrm.Navigation.openAlertDialog(alertStrings, alertOptions).then(",
+            "\tfunction success() {",
+            "\t\t// perform operations on alert dialog close",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Open Confirmation Dialog": {
+        "prefix": "XrmNavigationOpenConfirmDialog",
+        "description": "Displays a confirmation dialog box containing a message and two buttons.",
+        "body": [
+            "var confirmStrings = {",
+            "\tcancelButtonLabel: '${1:Cancel}',",
+            "\tconfirmButtonLabel: '${2:Confirm}',",
+            "\tsubtitle: '${3:Click confirm to proceed}',",
+            "\ttext: '${4:This is a confirmation.}',",
+            "\ttitle: '${5:Confirmation Dialog}'",
+            "};",
+            "var confirmOptions = { height: ${6:200}, width: ${7:450} };",
+            "",
+            "Xrm.Navigation.openConfirmDialog(confirmStrings, confirmOptions).then(",
+            "\tfunction (success) {",    
+            "\t\tif (success.confirmed) {",
+            "\t\t\tconsole.log('Dialog closed using OK button.');",
+            "\t\t\t$0",
+            "\t\t} else {",
+            "\t\t\tconsole.log('Dialog closed using Cancel button or X.');",
+            "\t\t}",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Open Error Dialog": {
+        "prefix": "XrmNavigationOpenErrorDialog",
+        "description": "Displays an error dialog.",
+        "body": [
+            "var errorOptions = {",
+            "\tdetails: '${1:Details specified in Download Log File.}',",
+            "\terrorCode: ${2:404},",
+            "\tmessage: '${3:This is an error dialog}',",
+            "};",
+            "",
+            "Xrm.Navigation.openErrorDialog(errorOptions).then(",
+            "\tfunction () {",
+            "\t\t// perform operations on error dialog close",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Open File": {
+        "prefix": "XrmNavigationOpenFile",
+        "description": "Opens a file.",
+        "body": [
+            "var file = {",
+            "\tfileContent: '${1:Contents of the file.}',",
+            "\tfileName: '${2:Name of the file.}',",
+            "\tfileSize: ${3:24},",
+            "\tmimeType: '${4:MIME type of the file.}',",
+            "};",
+            "",
+            "var openFileOptions = { openMode: ${5|1,2|} };",
+            "Xrm.Navigation.openFile(file, openFileOptions);"
+        ]
+    },
+    "Open Form": {
+        "prefix": "XrmNavigationOpenForm",
+        "description": "Opens an entity form or a quick create form.",
+        "body": [
+            "var entityFormOptions = {",
+            "\tcmdbar: ${1|true,false|},",
+            "\tcreateFromEntity: ${2:'lookup to the record that will provide default values'},",
+            "\tentityId: ${3:id},",
+            "\tentityName: '${4:account}',",
+            "\tformId: ${5:formId},",
+            "\theight: ${6:200},",
+            "\twidth: ${7:450},",
+            "\tnavbar: '${8|on,off,entity|}',",
+            "\topenInNewWindow: ${9|true,false|},",
+            "\twindowPosition: ${10|1,2|},",
+            "\tprocessId: ${11:businessProcessId},",
+            "\tprocessInstanceId: ${12:businessProcessInstanceId},",
+            "\tselectedStageId: ${13:selectedStageId},",
+            "\tuseQuickCreateForm: ${14|true,false|}",
+            "};",
+            "var formParameters = { }",
+            "",
+            "Xrm.Navigation.openForm(entityFormOptions, formParameters).then(",
+            "\tfunction (result) {",
+            "\t\t// perform operations if record is saved in the quick create form",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Open Url": {
+        "prefix": "XrmNavigationOpenUrl",
+        "description": "Opens a URL, including file URLs.",
+        "body": [
+            "var openUrlOptions = {",
+            "\theight: ${1:200},",
+            "\twidth: ${2:450}",
+            "};",
+            "",
+            "Xrm.Navigation.openUrl('${3:url}', openUrlOptions);"
+        ]
+    },
+    "Open Web Resource": {
+        "prefix": "XrmNavigationOpenWebresource",
+        "description": "Opens an HTML web resource.",
+        "body": [
+            "var windowOptions = { height: ${1:400}, width: ${2:400} }",
+            "",
+            "Xrm.Navigation.openWebResource('${3:new_webResource.html}', windowOptions, '${4:dataItemValue}');"
+        ]
+    },
+    "Load Panel": {
+        "prefix": "XrmPanelLoadPanel",
+        "description": "Displays the web page represented by a URL in the static area in the side pane, which appears on all pages in the Dynamics 365 for Customer Engagement apps web client.",
+        "body": "Xrm.Panel.loadPanel('${1:url}', '${2:This is panel title}');"
+    },
+       "Close Progress Indicator": {
+        "prefix": "XrmUtilityCloseProgressIndicator",
+        "description": "Closes a progress dialog box.",
+        "body": "Xrm.Utility.closeProgressIndicator();"
+    },
+    "Get Allowed Status Transitions": {
+        "prefix": "XrmUtilityGetAllowedStatusTransitions",
+        "description": "Returns the valid state transitions for the specified entity type and state code.",
+        "body": [
+            "Xrm.Utility.getAllowedStatusTransitions('${1:account}', ${2:690970000}).then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Get Entity Metadata": {
+        "prefix": "XrmUtilityGetEntityMetadata",
+        "description": "Returns the entity metadata for the specified entity.",
+        "body": [
+            "Xrm.Utility.getEntityMetadata('${1:account}', [ '${2:name}' ]).then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Get Global Context": {
+        "prefix": "XrmUtilityGetGlobalContext",
+        "description": "Gets the global context.",
+        "body": "Xrm.Utility.getGlobalContext()"
+    },
+    "Get Global Context Client": {
+        "prefix": "XrmUtilityGetGlobalContextClient",
+        "description": "Provides access to the methods to determine which client is being used, whether the client is connected to the server, and what kind of device is being used.",
+        "body": "Xrm.Utility.getGlobalContext().client"
+    },
+    "Get Global Context Client Get Client": {
+        "prefix": "XrmUtilityGetGlobalContextClientGetClient",
+        "description": "Returns a value to indicate which client the script is executing in.",
+        "body": "Xrm.Utility.getGlobalContext().client.getClient()"
+    },
+    "Get Global Context Client Get Client State": {
+        "prefix": "XrmUtilityGetGlobalContextClientGetClientState",
+        "description": "Returns a value to indicate the state of the client.",
+        "body": "Xrm.Utility.getGlobalContext().client.getClientState()"
+    },
+    "Get Global Context Client Get Form Factor": {
+        "prefix": "XrmUtilityGetGlobalContextClientGetFormFactor",
+        "description": "Returns information about the kind of device the user is using.",
+        "body": "Xrm.Utility.getGlobalContext().client.getFormFactor()"
+    },
+    "Get Global Context Client Is Offline": {
+        "prefix": "XrmUtilityGetGlobalContextClientIsOffline",
+        "description": "Returns information whether the server is online or offline.",
+        "body": "Xrm.Utility.getGlobalContext().client.isOffline()"
+    },
+    "Get Global Context Organization Settings": {
+        "prefix": "XrmUtilityGetGlobalContextOrganizationSettings",
+        "description": "Returns information about the current organization settings.",
+        "body": "Xrm.Utility.getGlobalContext().organizationSettings;"
+    },
+    "Get Global Context Organization Settings Attributes": {
+        "prefix": "XrmUtilityGetGlobalContextOrganizationSettingsAttributes",
+        "description": "Returns attributes and their values as key:value pairs that are available for the organization entity. Additional values will be available as attributes if they are specified as attribute dependencies in the web resource dependency list. The key will be the attribute logical name.",
+        "body": "Xrm.Utility.getGlobalContext().organizationSettings.attributes;"
+    },
+    "Get Global Context Organization Settings Base Currency Id": {
+        "prefix": "XrmUtilityGetGlobalContextOrganizationSettingsBaseCurrencyId",
+        "description": "Returns the ID of the base currency for the current organization.",
+        "body": "Xrm.Utility.getGlobalContext().organizationSettings.baseCurrencyId;"
+    },
+    "Get Global Context Organization Settings Default Country Code": {
+        "prefix": "XrmUtilityGetGlobalContextOrganizationSettingsDefaultCountryCode",
+        "description": "Returns the default country/region code for phone numbers for the current organization.",
+        "body": "Xrm.Utility.getGlobalContext().organizationSettings.defaultCountryCode;"
+    },
+    "Get Global Context Organization Settings Is Auto Save Enabled": {
+        "prefix": "XrmUtilityGetGlobalContextOrganizationSettingsIsAutoSaveEnabled",
+        "description": "Indicates whether the auto-save option is enabled for the current organization.",
+        "body": "Xrm.Utility.getGlobalContext().organizationSettings.isAutoSaveEnabled;"
+    },
+    "Get Global Context Organization Settings Language Id": {
+        "prefix": "XrmUtilityGetGlobalContextOrganizationSettingsLanguageId",
+        "description": "Returns the preferred language ID for the current organization.",
+        "body": "Xrm.Utility.getGlobalContext().organizationSettings.languageId;"
+    },
+    "Get Global Context Organization Settings Organization Id": {
+        "prefix": "XrmUtilityGetGlobalContextOrganizationSettingsOrganizationId",
+        "description": "Returns the ID of the current organization.",
+        "body": "Xrm.Utility.getGlobalContext().organizationSettings.organizationId;"
+    },
+    "Get Global Context Organization Settings Unique Name": {
+        "prefix": "XrmUtilityGetGlobalContextOrganizationSettingsUniqueName",
+        "description": "Returns the unique name of the current organization.",
+        "body": "Xrm.Utility.getGlobalContext().organizationSettings.uniqueName;"
+    },
+    "Get Global Context Organization Settings Use Skype Protocol": {
+        "prefix": "XrmUtilityGetGlobalContextOrganizationSettingsUseSkypeProtocol",
+        "description": "Indicates whether the Skype protocol is used for the current organization.",
+        "body": "Xrm.Utility.getGlobalContext().organizationSettings.useSkypeProtocol;"
+    },
+    "Get Global Context User Settings": {
+        "prefix": "XrmUtilityGetGlobalContextUserSettings",
+        "description": "Returns information about the current user settings.",
+        "body": "Xrm.Utility.getGlobalContext().userSettings;"
+    },
+    "Get Global Context User Settings Date Formatting Info": {
+        "prefix": "XrmUtilityGetGlobalContextUserSettingsDateFormattingInfo",
+        "description": "Returns the date formatting information for the current user.",
+        "body": "Xrm.Utility.getGlobalContext().userSettings.dateFormattingInfo;"
+    },
+    "Get Global Context User Settings Default Dashboard Id": {
+        "prefix": "XrmUtilityGetGlobalContextUserSettingsDefaultDashboardId",
+        "description": "Returns the ID of the default dashboard for the current user.",
+        "body": "Xrm.Utility.getGlobalContext().userSettings.defaultDashboardId;"
+    },
+    "Get Global Context User Settings Is Guided Help Enabled": {
+        "prefix": "XrmUtilityGetGlobalContextUserSettingsIsGuidedHelpEnabled",
+        "description": "Indicates whether guided help is enabled for the current user.",
+        "body": "Xrm.Utility.getGlobalContext().userSettings.isGuidedHelpEnabled;"
+    },
+    "Get Global Context User Settings Is High Contrast Enabled": {
+        "prefix": "XrmUtilityGetGlobalContextUserSettingsIsHighContrastEnabled",
+        "description": "Indicates whether high contrast is enabled for the current user.",
+        "body": "Xrm.Utility.getGlobalContext().userSettings.isHighContrastEnabled;"
+    },
+    "Get Global Context User Settings Is RTL": {
+        "prefix": "XrmUtilityGetGlobalContextUserSettingsIsRTL",
+        "description": "Indicates whether the language for the current user is a right-to-left (RTL) language.",
+        "body": "Xrm.Utility.getGlobalContext().userSettings.isRTL;"
+    },
+    "Get Global Context User Settings Language Id": {
+        "prefix": "XrmUtilityGetGlobalContextUserSettingsLanguageId",
+        "description": "Returns the language ID for the current user.",
+        "body": "Xrm.Utility.getGlobalContext().userSettings.languageId;"
+    },
+    "Get Global Context User Settings Security Role Privileges": {
+        "prefix": "XrmUtilityGetGlobalContextUserSettingsSecurityRolePrivileges",
+        "description": "Returns an array of strings that represent the GUID values of each of the security role privilege that the user is associated with or any teams that the user is associated with.",
+        "body": "Xrm.Utility.getGlobalContext().userSettings.securityRolePrivileges;"
+    },
+    "Get Global Context User Settings Security Roles": {
+        "prefix": "XrmUtilityGetGlobalContextUserSettingsSecurityRoles",
+        "description": "Returns an array of strings that represent the GUID values of each of the security role that the user is associated with or any teams that the user is associated with.",
+        "body": "Xrm.Utility.getGlobalContext().userSettings.securityRoles;"
+    },
+    "Get Global Context User Settings Transaction Currency Id": {
+        "prefix": "XrmUtilityGetGlobalContextUserSettingsTransactionCurrencyId",
+        "description": "Returns the transaction currency ID for the current user.",
+        "body": "Xrm.Utility.getGlobalContext().userSettings.transactionCurrencyId;"
+    },
+    "Get Global Context User Settings User Id": {
+        "prefix": "XrmUtilityGetGlobalContextUserSettingsUserId",
+        "description": "Returns the GUID of the SystemUser.Id value for the current user.",
+        "body": "Xrm.Utility.getGlobalContext().userSettings.userId;"
+    },
+    "Get Global Context User Settings User Name": {
+        "prefix": "XrmUtilityGetGlobalContextUserSettingsUserName",
+        "description": "Returns the name of the current user.",
+        "body": "Xrm.Utility.getGlobalContext().userSettings.userName;"
+    },
+    "Get Global Context User Settings Get Time Zone Offset Minutes": {
+        "prefix": "XrmUtilityGetGlobalContextUserSettingsGetTimeZoneOffsetMinutes",
+        "description": "Returns the difference in minutes between the local time and Coordinated Universal Time (UTC).",
+        "body": "Xrm.Utility.getGlobalContext().userSettings.getTimeZoneOffsetMinutes;"
+    },
+    "Get Global Context Get Advanced Config Setting": {
+        "prefix": "XrmUtilityGetGlobalContextGetAdvancedConfigSetting",
+        "description": "Returns information about the advanced configuration settings for the organization.",
+        "body": "Xrm.Utility.getGlobalContext().getAdvancedConfigSetting('${1|MaxChildIncidentNumber,MaxIncidentMergeNumber|}');"
+    },
+    "Get Global Context Get Client Url": {
+        "prefix": "XrmUtilityGetGlobalContextGetClientUrl",
+        "description": "Returns the base URL that was used to access the application.",
+        "body": "Xrm.Utility.getGlobalContext().getClientUrl();"
+    },
+    "Get Global Context Get Current App Name": {
+        "prefix": "XrmUtilityGetGlobalContextGetCurrentAppName",
+        "description": "Returns the name of the current business app in Customer Engagement.",
+        "body": [
+            "Xrm.Utility.getGlobalContext().getCurrentAppName().then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations on record creation",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Get Global Context Get Current App Properties": {
+        "prefix": "XrmUtilityGetGlobalContextGetCurrentAppProperties",
+        "description": "Returns the properties of the current business app in Customer Engagement.",
+        "body": [
+            "Xrm.Utility.getGlobalContext().getCurrentAppProperties().then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations on record creation",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Get Global Context Get Current App Url": {
+        "prefix": "XrmUtilityGetGlobalContextGetCurrentAppUrl",
+        "description": "Returns the URL of the current business app in Customer Engagement.",
+        "body": "Xrm.Utility.getGlobalContext().getCurrentAppUrl();"
+    },
+    "Get Global Context Get Version": {
+        "prefix": "XrmUtilityGetGlobalContextGetVersion",
+        "description": "Returns the version number of the Dynamics 365 for Customer Engagement apps instance.",
+        "body": "Xrm.Utility.getGlobalContext().getVersion();"
+    },
+    "Get Global Context Is On Premises": {
+        "prefix": "XrmUtilityGetGlobalContextIsOnPremises",
+        "description": "Returns a boolean value indicating if the Customer Engagement instance is hosted on-premises or online.",
+        "body": "Xrm.Utility.getGlobalContext().isOnPremises();"
+    },
+    "Get Global Context Prepend Org Name": {
+        "prefix": "XrmUtilityGetGlobalContextPrependOrgName",
+        "description": "Prefixes the current organization's unique name to a string, typically a URL path.",
+        "body": "Xrm.Utility.getGlobalContext().prependOrgName('${1:path}');"
+    },
+    "Get Learning Path Attribute Name": {
+        "prefix": "XrmUtilityGetLearningPathAttributeName",
+        "description": "Returns the name of the DOM attribute expected by the Learning Path (guided help) Content Designer for identifying UI controls in the Dynamics 365 for Customer Engagement apps form.",
+        "body": "Xrm.Utility.getLearningPathAttributeName();"
+    },
+    "Get Resource String": {
+        "prefix": "XrmUtilityGetResourceString",
+        "description": "Returns the localized string for a given key associated with the specified web resource.",
+        "body": "Xrm.Utility.getResourceString('${1:webResourceName}', ${2:key});"
+    },
+    "Invoke Process Action": {
+        "prefix": "XrmUtilityInvokeProcessAction",
+        "description": "Invokes an action based on the specified parameters.",
+        "body": [
+            "Xrm.Utility.invokeProcessAction('${1:name}', ${2:parameters}).then(",
+            "\tfunction success(result) {",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Lookup Objects": {
+        "prefix": "XrmUtilityLookupObjects",
+        "description": "Opens a lookup control to select one or more items.",
+        "body": [
+            "var lookupObjects = {",
+            "\tallowMultiSelect: ${1|true,false|},",
+            "\tdefaultEntityType: '${2:account}',",
+            "\tdefaultViewId: '${3:00000000-0000-0000-0000-000000000001}',",
+            "\tdisableMru: ${4|true,false|},",
+            "\tentityTypes: [ '${5:account}' ],",
+            "\tshowBarcodeScanner: ${6|true,false|},",
+            "\tviewIds: [ '${7:00000000-0000-0000-0000-000000000001}' ],",
+            "\tfilters: [{ filterXml: ${8:fetchXml}, entityLogicalName: '${9:account}' }]",
+            "};",
+            "",
+            "Xrm.Utility.lookupObjects(lookupOptions).then(",
+            "\tfunction success(result) {",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Refresh Parent Grid": {
+        "prefix": "XrmUtilityRefreshParentGrid",
+        "description": "Refreshes the parent grid containing the specified record.",
+        "body": [
+            "var lookupOptions = {",
+            "\tentityType: '${1:entityType}',",
+            "\tid: ${2:id},",
+            "\tname: '${3:name}'",
+            "};",
+            "",
+            "Xrm.Utility.refreshParentGrid(lookupOptions);"
+        ]
+    },
+    "Show Progress Indicator": {
+        "prefix": "XrmUtilityShowProgressIndicator",
+        "description": "Displays a progress dialog with the specified message.",
+        "body": "Xrm.Utility.showProgressIndicator('{1:message}');"
+    },
+        "Create Record": {
+        "prefix": "XrmWebApiCreateRecord",
+        "description": "Creates an entity record.",
+        "body": [
+            "Xrm.WebApi.createRecord('${1:account}', ${2:data}).then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations on record creation",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Delete Record": {
+        "prefix": "XrmWebApiDeleteRecord",
+        "description": "Deletes an entity record.",
+        "body": [
+            "Xrm.WebApi.deleteRecord('${1:account}', ${2:id}).then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations on record deletion",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Retrieve Record": {
+        "prefix": "XrmWebApiRetrieveRecord",
+        "description": "Retrieves an entity record.",
+        "body": [
+            "Xrm.WebApi.retrieveRecord('${1:account}', ${2:id}, ${3:options}).then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations on record retrieval",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Retrieve Multiple Records": {
+        "prefix": "XrmWebApiRetrieveMultipleRecords",
+        "description": "Retrieves a collection of entity records.",
+        "body": [
+            "Xrm.WebApi.retrieveMultipleRecords('${1:account}', ${2:options}, ${3:maxPageSize}).then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations on on retrieved records",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Update Record": {
+        "prefix": "XrmWebApiUpdateRecord",
+        "description": "Updates an entity record.",
+        "body": [
+            "Xrm.WebApi.createRecord('${1:account}', ${2:id}, ${3:data}).then(",
+            "\tfunction success(result) {",
+            "\t\t// perform operations on record update",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Is Available Offline": {
+        "prefix": "XrmWebApiIsAvailableOffline",
+        "description": "Returns a boolean value indicating whether an entity is present in user’s profile and is currently available for use in offline mode.",
+        "body": "Xrm.WebApi.offline.isAvailableOffline('${1:account}');"
+    },
+    "Execute Action": {
+        "prefix": "XrmWebApiExecute",
+        "description": "Execute a single action, function, or CRUD operation.",
+        "body": [
+            "Xrm.WebApi.online.execute(${1:request}).then(",
+            "\tfunction success(result) {",
+            "\t\tif (result.ok) {",
+            "\t\t\t// perform operations as required",
+            "\t\t\t$0",
+            "\t\t}",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
+    },
+    "Execute Multiple Actions": {
+        "prefix": "XrmWebApiExecuteMultiple",
+        "description": "Execute a single action, function, or CRUD operation.",
+        "body": [
+            "Xrm.WebApi.online.executeMultiple(${1:requests}).then(",
+            "\tfunction success(results) {",
+            "\t\t// perform operations as required",
+            "\t\t$0",
+            "\t},",
+            "\tfunction (error) {",
+            "\t\tconsole.log(error.message);",
+            "\t\t// handle error conditions",
+            "\t}",
+            ");"
+        ]
     }
 }
