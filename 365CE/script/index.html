@@ -220,25 +220,12 @@ function myError() {
   <body>
   <h1>Dynamics 365 CE: Client Scripting</h1>
     <div class="spacer">
-       <input type="text" id="myInput" onkeyup="myError()" placeholder="Type Error Code here...">
-      <!--<table id="t1">
-        <tr>
-          <th title="System.Object">Error Code</th>
-          <th title="System.Object">Message</th>
-        </tr>
-        
-        <tr><td>-2147087956</td><td>You can’t add the BusinessDataLocalizedLabel entity to the mobile offline profile item because it’s added automatically when the Product entity is added to the profile.</td></tr>
-        <tr><td>-2147087957</td><td>You can’t add the intersect entity to the mobile offline profile item because it’s added automatically when its parent entities are added to the profile.</td></tr>
-
-      </table>-->
-      
+       <input type="text" id="myInput" onkeyup="myError()" placeholder="Type Function Name here...">
       <table id='table'>
             <!-- HEADING FORMATION -->
             <tr>
-                <th>prefix</th>
-                <th>description</th>
-                <th>body</th>
-                
+                <th>Function</th>
+                <th>Body</th>
             </tr>
   
             <script>
@@ -257,12 +244,10 @@ function myError() {
                             student += '<tr>';
                             student += '<td>' +  value.prefix + '</td>';
   
-                            student += '<td><i>' + value.description + '</i></td>';
+                            student += '<td><i>//' + value.description + '</i><br>';
   
-                            student += '<td><pre>' + 
-                                value.body + '</pre></td>';
-  
-                            //student += '<td>' + value.Articles + '</td>';
+                            student += '<pre><b>' + 
+                                value.body + '</b></pre></td>';
   
                             student += '</tr>';
                         });
