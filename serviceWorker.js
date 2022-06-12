@@ -1,7 +1,7 @@
 self.addEventListener("install", e => {
     e.waitUntil(
       caches.open("static").then(cache => {
-        return cache.addAll(['./','./logo.png','./style.css']);
+        return cache.addAll(['./','']);
       })
     );
   });
