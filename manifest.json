@@ -1,10 +1,10 @@
 {
-    "name": "PWA Template",
-    "short_name": "PwaTemplate",
-    "start_url": "Index.html",
+    "name": "Dynamics CRM",
+    "short_name": "MSCRM",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#fdfdfd",
-    "theme_color": "#db4938",
+    "theme_color": "#000000",
     "orientation": "portrait-primary",
     "icons": [
       {
