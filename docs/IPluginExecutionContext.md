@@ -126,6 +126,7 @@ true if the plug-in is executing from the Microsoft Dynamics 365 for Microsoft O
 Gets a value indicating if the plug-in is executing within the database transaction.
 
 **Namespace:**   `Microsoft.Xrm.Sdk`
+
 **Assembly:**  `Microsoft.Xrm.Sdk` (in Microsoft.Xrm.Sdk.dll)
 
 Syntax
@@ -133,10 +134,12 @@ C#
 
 ```cs
 bool IsInTransaction { get; }
-```Property Value
-Type: System.Boolean
+```
+#### Property Value
+**Type:** ```System.Boolean```
 
-Type: Boolean
+**Type:** ```Boolean```
+
 true if the plug-in is executing within the database transaction; otherwise, false.
 
 ### IExecutionContext.IsOfflinePlayback Property
@@ -144,27 +147,26 @@ true if the plug-in is executing within the database transaction; otherwise, fal
 2 minutes to read
  
 
-Applies To: Dynamics 365 (online), Dynamics 365 (on-premises), Dynamics CRM 2016, Dynamics CRM Online
+> **Applies To:** Dynamics 365 (online), Dynamics 365 (on-premises), Dynamics CRM 2016, Dynamics CRM Online
 
 Gets a value indicating if the plug-in is executing as a result of the Microsoft Dynamics 365 for Microsoft Office Outlook with Offline Access client transitioning from offline to online and synchronizing with the Microsoft Dynamics 365 server.
 
-Namespace:   Microsoft.Xrm.Sdk
-Assembly:  Microsoft.Xrm.Sdk (in Microsoft.Xrm.Sdk.dll)
+**Namespace**  `Microsoft.Xrm.Sdk`
 
-Syntax
-C#
+**Assembly:**  `Microsoft.Xrm.Sdk (in Microsoft.Xrm.Sdk.dll)`
 
-Copy
+**Syntax**
+```cs
 bool IsOfflinePlayback { get; }
-Property Value
-Type: System.Boolean
+```
+#### Property Value
+**Type:** `System.Boolean`
 
-Type: Boolean
+**Type:** `Boolean`
 true if the the plug-in is executing as a result of the Microsoft Dynamics 365 for Microsoft Office Outlook with Offline Access client transitioning from offline to online; otherwise, false.
 
 ### IExecutionContext.IsolationMode Property
-11/28/2016
-2 minutes to read
+
  
 
 Applies To: Dynamics 365 (online), Dynamics 365 (on-premises), Dynamics CRM 2016, Dynamics CRM Online
