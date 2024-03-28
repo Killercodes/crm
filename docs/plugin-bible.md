@@ -34,6 +34,8 @@ Plugins & Workflows
   - [Understand the Data Context Passed to a Plug-In](#understand-the-data-context-passed-to-a-plug-in)
     - [Input and Output Parameters](#input-and-output-parameters)
   - [Pre and Post Entity Images](#pre-and-post-entity-images)
+    - [Pre Image](#pre-image)
+    - [Post Image](#post-image) 
     - [Support Offline Execution](#support-offline-execution)
     - [Web Access for Isolated (sandboxed) Plug-ins](#web-access-for-isolated-sandboxed-plug-ins)
   - [Impersonation in Plug-Ins](#impersonation-in-plug-ins)
@@ -609,12 +611,18 @@ Plugins in Dynamics CRM, allow you to register images against the steps of a plu
 
 Two types of Images are supported, Pre-Image and Post Image. 
 
-- **Pre-image:** In case of Pre-image, you get the image of the record as is stored in the SQL database before the CRM Platform action has been performed.
-
-- **Post Image:** returns the image of the record after the CRM Platform action has been performed. As developers, you may have at times, received the following error when trying to implement a plugin.
-
 In general `PreEntityImages` and `PostEntityImages` contain snapshots of the primary entity's attributes before (pre) and after (post) the core platform operation. Microsoft Dynamics CRM populates the pre-entity and post-entity images based on the security privileges of the impersonated system user. 
+
 Only entity attributes that are set to a value or null are available in the pre or post entity images. You can specify to have the platform populate these `PreEntityImages` and `PostEntityImages` properties when you register your plug-in. The entity alias value you specify during plug-in registration is used as the key into the image collection in your plug-in code.
+
+### Pre-image
+In case of Pre-image, you get the image of the record as is stored in the SQL database before the CRM Platform action has been performed. A pre-image is a snapshot of the entity’s attributes before the core operation.
+
+Availability of Pre Images for the Plugin stages are 
+| Stage | Create | Update | Delete |
+|-------|--------|--------|--------|
+| PRE   | No     | Yes    | Yes    |
+| POST  | Yes    | Yes    | Yes    |
 
 PreEntityImages is basically used to capture the data when the form loads. That is the data which is present by default when the form loads. 
 
@@ -627,7 +635,19 @@ if (context.PreEntityImages.Contains("PreImage") && context.PreEntityImages["Pre
 	preMessageImage = (Entity)context.PreEntityImages["PreImage"];
 ```
 
-whereas the Post Image contains the attributes value which are finally changed. We can capture the changed data before the database operation takes place. And can do any kind of validation based on the changed data. Remember it can only be registered  for update message and cannot be registered on create message.
+### Post Image
+Returns the image of the record after the CRM Platform action has been performed. As developers, you may have at times, received the following error when trying to implement a plugin.
+A post-image is a snapshot of the entity’s attribute after the core operation.
+
+Availability of Post Images for the Plugin stages,
+
+| Stage | Create | Update | Delete |
+|-------|--------|--------|--------|
+| PRE   | No     | No     | No     |
+| POST  | Yes    | Yes    | No     |
+
+
+The Post Image contains the attributes value which are finally changed. We can capture the changed data before the database operation takes place. And can do any kind of validation based on the changed data. Remember it can only be registered  for update message and cannot be registered on create message.
 
 ```cs
 Entity postMessageImage;
@@ -675,31 +695,17 @@ Message|Stage|Pre-Image|Post-Image
 **Delete**|PRE|Yes|No
 **Delete**|POST|Yes|No
 
-The following table explains the Pre-Image Availability
-
-Stage	|Create	|Update	|Delete
---|--|--|--
-**PRE**|	No|	Yes|	Yes
-**POST**|	Yes|	Yes|	Yes
-
-
-The following table explains the Post-Image Availability
-
-Stage|Create|Update|Delete
---|--|--|--
-**PRE**	|No	|No	|No
-**POST**|	Yes	|Yes|	No
 
  
 
-### Support Offline Execution
+## Support Offline Execution
 
 You can register plug-ins to execute in online mode, offline mode, or both. Offline mode is only supported on Microsoft Dynamics CRM for Microsoft Office Outlook with Offline Access. Your plug-in code can check whether it is executing in offline mode by checking the IsExecutingOffline13 property.
 
 When you design a plug-in that will be registered for both online and offline execution, remember that the plug-in can execute twice. The first time is while Microsoft Dynamics CRM for Microsoft Office Outlook with Offline Access is offline. The plug-in executes again when Microsoft Dynamics CRM for Outlook goes online and synchronization between Microsoft Dynamics CRM for Outlook and the Microsoft Dynamics CRM server occurs. You can check the IsOfflinePlayback14 property to determine if the plug-in is executing because of this synchronization.
  
 
-### Web Access for Isolated (sandboxed) Plug-ins
+## Web Access for Isolated (sandboxed) Plug-ins
 
 If you plan on registering your plug-in in the sandbox, you can still access Web addresses from your plug-in code. You can use any .NET Framework class in your plug-in code that provides Web access within the Web access restrictions outlined Plug-in Isolation, Trusts, and Statistics.
 For example, the following plug-in code downloads a Web page.
